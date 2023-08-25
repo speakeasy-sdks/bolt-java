@@ -1,0 +1,12 @@
+# Identifiers
+
+Identifiers were successfully retrieved
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `merchantDivisions`                                                                       | List<[IdentifiersMerchantDivisions](../../models/shared/IdentifiersMerchantDivisions.md)> | :heavy_check_mark:                                                                        | N/A                                                                                       |                                                                                           |
+| `merchantId`                                                                              | *String*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       | 8fd9diIy59sj                                                                              |
+| `signingSecret`                                                                           | *String*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       | xf833434fg2cffos92632aa6e1e4fc627a9385045gdj937fg2a127gi93cgos873                         |
