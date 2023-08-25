@@ -1,4 +1,11 @@
-# bolt-embed
+<div align="center">
+    <img src="https://github.com/speakeasy-sdks/stackone-ts/assets/6267663/6c1a7629-62dd-4ad9-88b0-a312a87fb3a0" width="300">
+    <h1>Java SDK</h1>
+   <p>Shockingly simple Checkout</p>
+   <a href="https://help.bolt.com/api-bolt/"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
+   <a href="https://github.com/speakeasy-sdks/bolt-java/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/bolt-java/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
+</div>
 
 <!-- Start SDK Installation -->
 ## SDK Installation
