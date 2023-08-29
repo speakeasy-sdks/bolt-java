@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *String*           | :heavy_check_mark: | N/A                |                    |
-| `oauth`            | *String*           | :heavy_check_mark: | N/A                |                    |
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `option1`                                                                                                   | [AccountAddPaymentMethodSecurityOption1](../../models/operations/AccountAddPaymentMethodSecurityOption1.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `option2`                                                                                                   | [AccountAddPaymentMethodSecurityOption2](../../models/operations/AccountAddPaymentMethodSecurityOption2.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |

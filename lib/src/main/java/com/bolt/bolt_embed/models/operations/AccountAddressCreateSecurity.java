@@ -5,28 +5,24 @@
 package com.bolt.bolt_embed.models.operations;
 
 import com.bolt.bolt_embed.utils.SpeakeasyMetadata;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class AccountAddressCreateSecurity {
-    @SpeakeasyMetadata("security:scheme=true,type=apiKey,subtype=header,name=X-API-Key")
-    public String apiKey;
+    @SpeakeasyMetadata("security:option=true")
+    public AccountAddressCreateSecurityOption1 option1;
 
-    public AccountAddressCreateSecurity withApiKey(String apiKey) {
-        this.apiKey = apiKey;
+    public AccountAddressCreateSecurity withOption1(AccountAddressCreateSecurityOption1 option1) {
+        this.option1 = option1;
         return this;
     }
     
-    @SpeakeasyMetadata("security:scheme=true,type=oauth2,name=Authorization")
-    public String oauth;
+    @SpeakeasyMetadata("security:option=true")
+    public AccountAddressCreateSecurityOption2 option2;
 
-    public AccountAddressCreateSecurity withOauth(String oauth) {
-        this.oauth = oauth;
+    public AccountAddressCreateSecurity withOption2(AccountAddressCreateSecurityOption2 option2) {
+        this.option2 = option2;
         return this;
     }
     
-    public AccountAddressCreateSecurity(@JsonProperty("api-key") String apiKey, @JsonProperty("oauth") String oauth) {
-        this.apiKey = apiKey;
-        this.oauth = oauth;
-  }
+    public AccountAddressCreateSecurity(){}
 }

@@ -28,6 +28,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateRequest;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurity;
+import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
 
 public class Application {
@@ -46,9 +48,11 @@ public class Application {
                                 streetAddress2 = "c/o Shipping Department";
                             }};);            
 
-            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity("unde", "nulla") {{
-                apiKey = "";
-                oauth = "";
+            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity() {{
+                option1 = new AccountAddressCreateSecurityOption1("unde", "nulla") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.addressListing != null) {
@@ -91,6 +95,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodRequest;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurity;
+import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicit;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicitTag;
 import com.bolt.bolt_embed.models.shared.AddressReferenceId;
@@ -133,9 +139,11 @@ public class Application {
                                 type = PaymentMethodCreditCardType.CREDIT;
                             }}, "illum");            
 
-            AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity("vel", "error") {{
-                apiKey = "";
-                oauth = "";
+            AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity() {{
+                option1 = new AccountAddPaymentMethodSecurityOption1("vel", "error") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.paymentMethod != null) {
@@ -176,6 +184,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteRequest;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurity;
+import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurityOption2;
 
 public class Application {
     public static void main(String[] args) {
@@ -185,9 +195,11 @@ public class Application {
 
             AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("deserunt", "D4g3h5tBuVYK9");            
 
-            AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity("suscipit", "iure") {{
-                apiKey = "";
-                oauth = "";
+            AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity() {{
+                option1 = new AccountAddressDeleteSecurityOption1("suscipit", "iure") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.statusCode == 200) {
@@ -229,6 +241,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountAddressEditRequest;
 import com.bolt.bolt_embed.models.operations.AccountAddressEditResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurity;
+import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
 
 public class Application {
@@ -247,9 +261,11 @@ public class Application {
                                 streetAddress2 = "c/o Shipping Department";
                             }};, "D4g3h5tBuVYK9");            
 
-            AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity("debitis", "ipsa") {{
-                apiKey = "";
-                oauth = "";
+            AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity() {{
+                option1 = new AccountAddressEditSecurityOption1("debitis", "ipsa") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.addressListing != null) {
@@ -335,6 +351,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountGetRequest;
 import com.bolt.bolt_embed.models.operations.AccountGetResponse;
 import com.bolt.bolt_embed.models.operations.AccountGetSecurity;
+import com.bolt.bolt_embed.models.operations.AccountGetSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountGetSecurityOption2;
 
 public class Application {
     public static void main(String[] args) {
@@ -344,9 +362,11 @@ public class Application {
 
             AccountGetRequest req = new AccountGetRequest("tempora");            
 
-            AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity("suscipit", "molestiae") {{
-                apiKey = "";
-                oauth = "";
+            AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity() {{
+                option1 = new AccountGetSecurityOption1("suscipit", "molestiae") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.account != null) {

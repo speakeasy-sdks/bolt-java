@@ -8,6 +8,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateRequest;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurity;
+import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption1;
+import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
 
 public class Application {
@@ -26,9 +28,11 @@ public class Application {
                                 streetAddress2 = "c/o Shipping Department";
                             }};);            
 
-            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity("provident", "distinctio") {{
-                apiKey = "";
-                oauth = "";
+            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity() {{
+                option1 = new AccountAddressCreateSecurityOption1("provident", "distinctio") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.addressListing != null) {

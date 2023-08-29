@@ -196,6 +196,8 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.PaymentsInitializeRequest;
 import com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse;
 import com.bolt.bolt_embed.models.operations.PaymentsInitializeSecurity;
+import com.bolt.bolt_embed.models.operations.PaymentsInitializeSecurityOption1;
+import com.bolt.bolt_embed.models.operations.PaymentsInitializeSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicit;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicitTag;
 import com.bolt.bolt_embed.models.shared.AddressReferenceId;
@@ -341,9 +343,11 @@ public class Application {
                                                 id = "id";
                                             }}););            
 
-            PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity("at", "maiores") {{
-                apiKey = "";
-                oauth = "";
+            PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity() {{
+                option1 = new PaymentsInitializeSecurityOption1("at", "maiores") {{
+                    apiKey = "";
+                    oauth = "";
+                }};
             }});
 
             if (res.paymentMethodInitializeResponse != null) {

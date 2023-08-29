@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 8bd0ef2ed4dbca409a5bf6444c797989
+  docChecksum: dd92b9c611121e0300b4763f477bbc36
   docVersion: 3.0.1
-  speakeasyVersion: 1.74.16
-  generationVersion: 2.88.2
+  speakeasyVersion: 1.74.17
+  generationVersion: 2.88.5
 generation:
   comments:
     disableComments: false
@@ -21,7 +21,7 @@ features:
     methodSecurity: 2.81.1
     nameOverrides: 2.81.1
 java:
-  version: 0.1.1
+  version: 0.1.2
   artifactID: bolt-embed
   companyEmail: info@mycompany.com
   companyName: My Company

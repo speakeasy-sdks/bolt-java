@@ -5,28 +5,24 @@
 package com.bolt.bolt_embed.models.operations;
 
 import com.bolt.bolt_embed.utils.SpeakeasyMetadata;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class AccountAddPaymentMethodSecurity {
-    @SpeakeasyMetadata("security:scheme=true,type=apiKey,subtype=header,name=X-API-Key")
-    public String apiKey;
+    @SpeakeasyMetadata("security:option=true")
+    public AccountAddPaymentMethodSecurityOption1 option1;
 
-    public AccountAddPaymentMethodSecurity withApiKey(String apiKey) {
-        this.apiKey = apiKey;
+    public AccountAddPaymentMethodSecurity withOption1(AccountAddPaymentMethodSecurityOption1 option1) {
+        this.option1 = option1;
         return this;
     }
     
-    @SpeakeasyMetadata("security:scheme=true,type=oauth2,name=Authorization")
-    public String oauth;
+    @SpeakeasyMetadata("security:option=true")
+    public AccountAddPaymentMethodSecurityOption2 option2;
 
-    public AccountAddPaymentMethodSecurity withOauth(String oauth) {
-        this.oauth = oauth;
+    public AccountAddPaymentMethodSecurity withOption2(AccountAddPaymentMethodSecurityOption2 option2) {
+        this.option2 = option2;
         return this;
     }
     
-    public AccountAddPaymentMethodSecurity(@JsonProperty("api-key") String apiKey, @JsonProperty("oauth") String oauth) {
-        this.apiKey = apiKey;
-        this.oauth = oauth;
-  }
+    public AccountAddPaymentMethodSecurity(){}
 }
