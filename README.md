@@ -14,7 +14,7 @@
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.1.2'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.2.0'
 ```
 <!-- End SDK Installation -->
 
