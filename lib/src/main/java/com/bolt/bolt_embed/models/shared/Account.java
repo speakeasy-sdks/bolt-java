@@ -8,9 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Account - The account details were successfully retrieved
- */
 
 public class Account {
     @JsonProperty("addresses")
@@ -22,9 +19,9 @@ public class Account {
     }
     
     @JsonProperty("payment_methods")
-    public Object[] paymentMethods;
+    public PaymentMethodCreditCard[] paymentMethods;
 
-    public Account withPaymentMethods(Object[] paymentMethods) {
+    public Account withPaymentMethods(PaymentMethodCreditCard[] paymentMethods) {
         this.paymentMethods = paymentMethods;
         return this;
     }
@@ -38,7 +35,7 @@ public class Account {
         return this;
     }
     
-    public Account(@JsonProperty("addresses") AddressListing[] addresses, @JsonProperty("payment_methods") Object[] paymentMethods) {
+    public Account(@JsonProperty("addresses") AddressListing[] addresses, @JsonProperty("payment_methods") PaymentMethodCreditCard[] paymentMethods) {
         this.addresses = addresses;
         this.paymentMethods = paymentMethods;
   }

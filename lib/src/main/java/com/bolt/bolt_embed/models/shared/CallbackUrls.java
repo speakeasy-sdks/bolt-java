@@ -8,9 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * CallbackUrls - Callbacks URLs were successfully retrieved
- */
 
 public class CallbackUrls {
     @JsonInclude(Include.NON_ABSENT)

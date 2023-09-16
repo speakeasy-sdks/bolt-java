@@ -6,9 +6,6 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Identifiers - Identifiers were successfully retrieved
- */
 
 public class Identifiers {
     @JsonProperty("merchant_divisions")

@@ -6,9 +6,6 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Error - The specified resource was not found
- */
 
 public class Error {
     /**

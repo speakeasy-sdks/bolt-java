@@ -7,11 +7,6 @@ package com.bolt.bolt_embed.models.shared;
 import com.bolt.bolt_embed.utils.SpeakeasyMetadata;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Identifier - A type and value combination that defines the identifier used to detect
- * the existence of an account.
- * 
- */
 
 public class Identifier {
     /**

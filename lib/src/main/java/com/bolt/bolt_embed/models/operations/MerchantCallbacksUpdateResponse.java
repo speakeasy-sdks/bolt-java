@@ -34,6 +34,17 @@ public class MerchantCallbacksUpdateResponse {
     }
     
     /**
+     * The URL is invalid and cannot be set
+     */
+    
+    public com.bolt.bolt_embed.models.shared.CallbackUrlErrorInvalidUrl callbackUrlErrorInvalidUrl;
+
+    public MerchantCallbacksUpdateResponse withCallbackUrlErrorInvalidUrl(com.bolt.bolt_embed.models.shared.CallbackUrlErrorInvalidUrl callbackUrlErrorInvalidUrl) {
+        this.callbackUrlErrorInvalidUrl = callbackUrlErrorInvalidUrl;
+        return this;
+    }
+    
+    /**
      * Callbacks URLs were successfully updated
      */
     
@@ -41,17 +52,6 @@ public class MerchantCallbacksUpdateResponse {
 
     public MerchantCallbacksUpdateResponse withCallbackUrls(com.bolt.bolt_embed.models.shared.CallbackUrls callbackUrls) {
         this.callbackUrls = callbackUrls;
-        return this;
-    }
-    
-    /**
-     * The URL is invalid and cannot be set
-     */
-    
-    public Object merchantCallbacksUpdate400ApplicationJSONOneOf;
-
-    public MerchantCallbacksUpdateResponse withMerchantCallbacksUpdate400ApplicationJSONOneOf(Object merchantCallbacksUpdate400ApplicationJSONOneOf) {
-        this.merchantCallbacksUpdate400ApplicationJSONOneOf = merchantCallbacksUpdate400ApplicationJSONOneOf;
         return this;
     }
     

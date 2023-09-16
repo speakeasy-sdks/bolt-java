@@ -37,10 +37,10 @@ public class AccountAddPaymentMethodResponse {
      * The payment method was successfully added
      */
     
-    public Object paymentMethod;
+    public com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard paymentMethodCreditCard;
 
-    public AccountAddPaymentMethodResponse withPaymentMethod(Object paymentMethod) {
-        this.paymentMethod = paymentMethod;
+    public AccountAddPaymentMethodResponse withPaymentMethodCreditCard(com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard paymentMethodCreditCard) {
+        this.paymentMethodCreditCard = paymentMethodCreditCard;
         return this;
     }
     

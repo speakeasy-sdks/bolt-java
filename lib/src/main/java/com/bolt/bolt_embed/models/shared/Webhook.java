@@ -13,9 +13,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.OffsetDateTime;
 
-/**
- * Webhook - The webhook was successfully created
- */
 
 public class Webhook {
     /**

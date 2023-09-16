@@ -6,9 +6,6 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * CreditCard - Successfully generated test credit card details
- */
 
 public class CreditCard {
     /**

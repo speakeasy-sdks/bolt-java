@@ -8,9 +8,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * AddressListing - The address was successfully added
- */
 
 public class AddressListing {
     @JsonInclude(Include.NON_ABSENT)

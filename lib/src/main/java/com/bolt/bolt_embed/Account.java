@@ -107,7 +107,7 @@ public class Account {
         HTTPRequest req = new HTTPRequest();
         req.setMethod("POST");
         req.setURL(url);
-        SerializedBody serializedRequestBody = com.bolt.bolt_embed.utils.Utils.serializeRequestBody(request, "requestBody", "json");
+        SerializedBody serializedRequestBody = com.bolt.bolt_embed.utils.Utils.serializeRequestBody(request, "paymentMethodCreditCard", "json");
         if (serializedRequestBody == null) {
             throw new Exception("Request body is required");
         }
@@ -131,15 +131,15 @@ public class Account {
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse res = new com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse(contentType, httpRes.statusCode()) {{
-            paymentMethod = null;
+            paymentMethodCreditCard = null;
         }};
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
                 ObjectMapper mapper = JSON.getMapper();
-                Object out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), Object.class);
-                res.paymentMethod = out;
+                com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard.class);
+                res.paymentMethodCreditCard = out;
             }
         }
 

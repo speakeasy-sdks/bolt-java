@@ -1,4 +1,4 @@
-# testing
+# Testing
 
 ## Overview
 
@@ -41,7 +41,7 @@ public class Application {
                 isMigrated = true;
             }};            
 
-            TestingAccountCreateResponse res = sdk.testing.createAccount(req, new TestingAccountCreateSecurity("molestiae") {{
+            TestingAccountCreateResponse res = sdk.testing.createAccount(req, new TestingAccountCreateSecurity("perferendis") {{
                 apiKey = "";
             }});
 
@@ -105,38 +105,11 @@ public class Application {
                                     region = "CA";
                                     status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
                                 }}),
-                                add(new ShipmentTrackingUpdateTrackingDetails() {{
-                                    countryCode = "US";
-                                    eventDate = "2014-08-21:T14:24:00Z";
-                                    locality = "San Francisco";
-                                    message = "Billing information received";
-                                    postalCode = "94105";
-                                    region = "CA";
-                                    status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
-                                }}),
-                                add(new ShipmentTrackingUpdateTrackingDetails() {{
-                                    countryCode = "US";
-                                    eventDate = "2014-08-21:T14:24:00Z";
-                                    locality = "San Francisco";
-                                    message = "Billing information received";
-                                    postalCode = "94105";
-                                    region = "CA";
-                                    status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
-                                }}),
-                                add(new ShipmentTrackingUpdateTrackingDetails() {{
-                                    countryCode = "US";
-                                    eventDate = "2014-08-21:T14:24:00Z";
-                                    locality = "San Francisco";
-                                    message = "Billing information received";
-                                    postalCode = "94105";
-                                    region = "CA";
-                                    status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
-                                }}),
                             }}, "MockBolt-143292") {{
                 deliveryDate = OffsetDateTime.parse("2014-08-23:T06:00:00Z");
             }};            
 
-            TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req, new TestingShipmentTrackingCreateSecurity("quod") {{
+            TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req, new TestingShipmentTrackingCreateSecurity("ipsam") {{
                 apiKey = "";
             }});
 
@@ -184,7 +157,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            TestingCreditCardGetResponse res = sdk.testing.getCreditCard(new TestingCreditCardGetSecurity("esse") {{
+            TestingCreditCardGetResponse res = sdk.testing.getCreditCard(new TestingCreditCardGetSecurity("repellendus") {{
                 apiKey = "";
             }});
 

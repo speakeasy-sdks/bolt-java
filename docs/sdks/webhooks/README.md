@@ -1,4 +1,4 @@
-# webhooks
+# Webhooks
 
 ## Overview
 
@@ -44,19 +44,14 @@ public class Application {
 
             com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput(                new EventList(EventListTag.LIST,                 new com.bolt.bolt_embed.models.shared.EventListEventList[]{{
                                                 add(EventListEventList.AUTH),
-                                                add(EventListEventList.AUTH),
-                                                add(EventListEventList.AUTH),
                                             }}) {{
                                 dotTag = EventListTag.LIST;
                                 eventList = new com.bolt.bolt_embed.models.shared.EventListEventList[]{{
                                     add(EventListEventList.AUTH),
-                                    add(EventListEventList.AUTH),
-                                    add(EventListEventList.AUTH),
-                                    add(EventListEventList.AUTH),
                                 }};
                             }}, "https://www.example.com/webhook");            
 
-            WebhooksCreateResponse res = sdk.webhooks.create(req, new WebhooksCreateSecurity("dicta") {{
+            WebhooksCreateResponse res = sdk.webhooks.create(req, new WebhooksCreateSecurity("quo") {{
                 apiKey = "";
             }});
 
@@ -105,7 +100,7 @@ public class Application {
 
             WebhooksDeleteRequest req = new WebhooksDeleteRequest("wh_za7VbYcSQU2zRgGQXQAm-g");            
 
-            WebhooksDeleteResponse res = sdk.webhooks.delete(req, new WebhooksDeleteSecurity("nam") {{
+            WebhooksDeleteResponse res = sdk.webhooks.delete(req, new WebhooksDeleteSecurity("odit") {{
                 apiKey = "";
             }});
 
@@ -154,7 +149,7 @@ public class Application {
 
             WebhooksGetRequest req = new WebhooksGetRequest("wh_za7VbYcSQU2zRgGQXQAm-g");            
 
-            WebhooksGetResponse res = sdk.webhooks.get(req, new WebhooksGetSecurity("officia") {{
+            WebhooksGetResponse res = sdk.webhooks.get(req, new WebhooksGetSecurity("at") {{
                 apiKey = "";
             }});
 
@@ -201,9 +196,9 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            WebhooksGetAllRequest req = new WebhooksGetAllRequest("occaecati");            
+            WebhooksGetAllRequest req = new WebhooksGetAllRequest("at");            
 
-            WebhooksGetAllResponse res = sdk.webhooks.getAll(req, new WebhooksGetAllSecurity("fugit") {{
+            WebhooksGetAllResponse res = sdk.webhooks.getAll(req, new WebhooksGetAllSecurity("maiores") {{
                 apiKey = "";
             }});
 

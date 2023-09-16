@@ -1,4 +1,4 @@
-# payments
+# Payments
 
 ## Overview
 
@@ -60,69 +60,9 @@ public class Application {
                                                         code = "SUMMER10DISCOUNT";
                                                         detailsUrl = "https://www.example.com/SUMMER-SALE";
                                                     }}),
-                                                    add(new CartDiscount(                new Amounts("USD", 900L) {{
-                                                                        tax = 900L;
-                                                                    }};) {{
-                                                        amounts = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                        code = "SUMMER10DISCOUNT";
-                                                        detailsUrl = "https://www.example.com/SUMMER-SALE";
-                                                    }}),
-                                                    add(new CartDiscount(                new Amounts("USD", 900L) {{
-                                                                        tax = 900L;
-                                                                    }};) {{
-                                                        amounts = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                        code = "SUMMER10DISCOUNT";
-                                                        detailsUrl = "https://www.example.com/SUMMER-SALE";
-                                                    }}),
-                                                    add(new CartDiscount(                new Amounts("USD", 900L) {{
-                                                                        tax = 900L;
-                                                                    }};) {{
-                                                        amounts = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                        code = "SUMMER10DISCOUNT";
-                                                        detailsUrl = "https://www.example.com/SUMMER-SALE";
-                                                    }}),
                                                 }};
                                                 displayId = "215614191";
                                                 items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
-                                                    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L) {{
-                                                        description = "Large tote with Bolt logo.";
-                                                        imageUrl = "https://www.example.com/products/123456/images/1.png";
-                                                        name = "Bolt Swag Bag";
-                                                        quantity = 1L;
-                                                        reference = "item_100";
-                                                        totalAmount = 1000L;
-                                                        unitPrice = 1000L;
-                                                    }}),
-                                                    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L) {{
-                                                        description = "Large tote with Bolt logo.";
-                                                        imageUrl = "https://www.example.com/products/123456/images/1.png";
-                                                        name = "Bolt Swag Bag";
-                                                        quantity = 1L;
-                                                        reference = "item_100";
-                                                        totalAmount = 1000L;
-                                                        unitPrice = 1000L;
-                                                    }}),
-                                                    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L) {{
-                                                        description = "Large tote with Bolt logo.";
-                                                        imageUrl = "https://www.example.com/products/123456/images/1.png";
-                                                        name = "Bolt Swag Bag";
-                                                        quantity = 1L;
-                                                        reference = "item_100";
-                                                        totalAmount = 1000L;
-                                                        unitPrice = 1000L;
-                                                    }}),
                                                     add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L) {{
                                                         description = "Large tote with Bolt logo.";
                                                         imageUrl = "https://www.example.com/products/123456/images/1.png";
@@ -136,9 +76,20 @@ public class Application {
                                                 orderDescription = "Order #1234567890";
                                                 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
                                                     add(new CartShipment() {{
-                                                        address = new AddressReferenceId(AddressReferenceIdTag.ID, "D4g3h5tBuVYK9") {{
-                                                            dotTag = AddressReferenceIdTag.ID;
+                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
+                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
+                                                            company = "ACME Corporation";
+                                                            countryCode = "US";
+                                                            email = "alice@example.com";
+                                                            firstName = "Alice";
                                                             id = "D4g3h5tBuVYK9";
+                                                            lastName = "Baker";
+                                                            locality = "San Francisco";
+                                                            phone = "+14155550199";
+                                                            postalCode = "94105";
+                                                            region = "CA";
+                                                            streetAddress1 = "535 Mission St, Ste 1401";
+                                                            streetAddress2 = "c/o Shipping Department";
                                                         }};
                                                         carrier = "FedEx";
                                                         cost = new Amounts("USD", 900L) {{
@@ -148,13 +99,9 @@ public class Application {
                                                         }};
                                                     }}),
                                                 }};
-                                            }};,                 new PaymentMethodPaypal(PaymentMethodPaypalTag.PAYPAL, "www.example.com/handle_paypal_cancel", "www.example.com/handle_paypal_success") {{
-                                                dotTag = PaymentMethodPaypalTag.PAYPAL;
-                                                cancel = "www.example.com/handle_paypal_cancel";
-                                                success = "www.example.com/handle_paypal_success";
-                                            }}););            
+                                            }};,                 new PaymentMethodPaypal(PaymentMethodPaypalTag.PAYPAL, "www.example.com/handle_paypal_cancel", "www.example.com/handle_paypal_success");););            
 
-            GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req, new GuestPaymentsInitializeSecurity("veritatis") {{
+            GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req, new GuestPaymentsInitializeSecurity("temporibus") {{
                 apiKey = "";
             }});
 
@@ -217,7 +164,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            PaymentsInitializeRequest req = new PaymentsInitializeRequest("deserunt",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
+            PaymentsInitializeRequest req = new PaymentsInitializeRequest("ab",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
                                                                 tax = 900L;
                                                             }};, "order_100") {{
                                                 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -244,64 +191,9 @@ public class Application {
                                                         totalAmount = 1000L;
                                                         unitPrice = 1000L;
                                                     }}),
-                                                    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L) {{
-                                                        description = "Large tote with Bolt logo.";
-                                                        imageUrl = "https://www.example.com/products/123456/images/1.png";
-                                                        name = "Bolt Swag Bag";
-                                                        quantity = 1L;
-                                                        reference = "item_100";
-                                                        totalAmount = 1000L;
-                                                        unitPrice = 1000L;
-                                                    }}),
                                                 }};
                                                 orderDescription = "Order #1234567890";
                                                 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
-                                                    add(new CartShipment() {{
-                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
-                                                            company = "ACME Corporation";
-                                                            countryCode = "US";
-                                                            email = "alice@example.com";
-                                                            firstName = "Alice";
-                                                            id = "D4g3h5tBuVYK9";
-                                                            lastName = "Baker";
-                                                            locality = "San Francisco";
-                                                            phone = "+14155550199";
-                                                            postalCode = "94105";
-                                                            region = "CA";
-                                                            streetAddress1 = "535 Mission St, Ste 1401";
-                                                            streetAddress2 = "c/o Shipping Department";
-                                                        }};
-                                                        carrier = "FedEx";
-                                                        cost = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                    }}),
-                                                    add(new CartShipment() {{
-                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
-                                                            company = "ACME Corporation";
-                                                            countryCode = "US";
-                                                            email = "alice@example.com";
-                                                            firstName = "Alice";
-                                                            id = "D4g3h5tBuVYK9";
-                                                            lastName = "Baker";
-                                                            locality = "San Francisco";
-                                                            phone = "+14155550199";
-                                                            postalCode = "94105";
-                                                            region = "CA";
-                                                            streetAddress1 = "535 Mission St, Ste 1401";
-                                                            streetAddress2 = "c/o Shipping Department";
-                                                        }};
-                                                        carrier = "FedEx";
-                                                        cost = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                    }}),
                                                     add(new CartShipment() {{
                                                         address = new AddressReferenceId(AddressReferenceIdTag.ID, "D4g3h5tBuVYK9") {{
                                                             dotTag = AddressReferenceIdTag.ID;
@@ -314,37 +206,11 @@ public class Application {
                                                             total = 900L;
                                                         }};
                                                     }}),
-                                                    add(new CartShipment() {{
-                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
-                                                            company = "ACME Corporation";
-                                                            countryCode = "US";
-                                                            email = "alice@example.com";
-                                                            firstName = "Alice";
-                                                            id = "D4g3h5tBuVYK9";
-                                                            lastName = "Baker";
-                                                            locality = "San Francisco";
-                                                            phone = "+14155550199";
-                                                            postalCode = "94105";
-                                                            region = "CA";
-                                                            streetAddress1 = "535 Mission St, Ste 1401";
-                                                            streetAddress2 = "c/o Shipping Department";
-                                                        }};
-                                                        carrier = "FedEx";
-                                                        cost = new Amounts("USD", 900L) {{
-                                                            currency = "USD";
-                                                            tax = 900L;
-                                                            total = 900L;
-                                                        }};
-                                                    }}),
                                                 }};
-                                            }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id") {{
-                                                dotTag = PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD;
-                                                id = "id";
-                                            }}););            
+                                            }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id");););            
 
             PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity() {{
-                option1 = new PaymentsInitializeSecurityOption1("at", "maiores") {{
+                option1 = new PaymentsInitializeSecurityOption1("veritatis", "deserunt") {{
                     apiKey = "";
                     oauth = "";
                 }};

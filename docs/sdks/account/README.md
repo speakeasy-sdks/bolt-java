@@ -1,4 +1,4 @@
-# account
+# Account
 
 ## Overview
 
@@ -112,32 +112,18 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest(                new PaymentMethodCreditCard(PaymentMethodCreditCardTag.CREDIT_CARD, "411111", "2025-03", "1004", PaymentMethodCreditCardNetwork.VISA, "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0", PaymentMethodCreditCardType.CREDIT) {{
-                                dotTag = PaymentMethodCreditCardTag.CREDIT_CARD;
+            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("corrupti",                 new PaymentMethodCreditCard(PaymentMethodCreditCardTag.CREDIT_CARD, "411111", "2025-03", "1004", PaymentMethodCreditCardNetwork.VISA, "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0", PaymentMethodCreditCardType.CREDIT) {{
                                 billingAddressId = "D4g3h5tBuVYK9";
                                 billingAddressInput = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                    dotTag = AddressReferenceExplicitTag.EXPLICIT;
                                     company = "ACME Corporation";
-                                    countryCode = "US";
                                     email = "alice@example.com";
-                                    firstName = "Alice";
                                     id = "D4g3h5tBuVYK9";
-                                    lastName = "Baker";
-                                    locality = "San Francisco";
                                     phone = "+14155550199";
-                                    postalCode = "94105";
                                     region = "CA";
-                                    streetAddress1 = "535 Mission St, Ste 1401";
                                     streetAddress2 = "c/o Shipping Department";
-                                }};
-                                bin = "411111";
-                                expiration = "2025-03";
+                                }};;
                                 id = "X5h6j8uLpVGK0";
-                                last4 = "1004";
-                                network = PaymentMethodCreditCardNetwork.VISA;
-                                token = "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0";
-                                type = PaymentMethodCreditCardType.CREDIT;
-                            }}, "illum");            
+                            }};);            
 
             AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity() {{
                 option1 = new AccountAddPaymentMethodSecurityOption1("vel", "error") {{
@@ -146,7 +132,7 @@ public class Application {
                 }};
             }});
 
-            if (res.paymentMethod != null) {
+            if (res.paymentMethodCreditCard != null) {
                 // handle response
             }
         } catch (Exception e) {

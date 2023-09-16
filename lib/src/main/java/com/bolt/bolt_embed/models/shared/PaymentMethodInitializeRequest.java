@@ -17,14 +17,14 @@ public class PaymentMethodInitializeRequest {
     }
     
     @JsonProperty("payment_method")
-    public Object paymentMethod;
+    public PaymentMethodSavedPaymentMethod paymentMethod;
 
-    public PaymentMethodInitializeRequest withPaymentMethod(Object paymentMethod) {
+    public PaymentMethodInitializeRequest withPaymentMethod(PaymentMethodSavedPaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
         return this;
     }
     
-    public PaymentMethodInitializeRequest(@JsonProperty("cart") Cart cart, @JsonProperty("payment_method") Object paymentMethod) {
+    public PaymentMethodInitializeRequest(@JsonProperty("cart") Cart cart, @JsonProperty("payment_method") PaymentMethodSavedPaymentMethod paymentMethod) {
         this.cart = cart;
         this.paymentMethod = paymentMethod;
   }
