@@ -31,11 +31,10 @@ public class Payments {
      * Bolt when it is updated or finalized for guest shoppers.
      * 
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse initializeGuestPayment(com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest request, com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse initializeGuestPayment(com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/guest/payments");
         
@@ -59,7 +58,7 @@ public class Payments {
             }
         }
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 

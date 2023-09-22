@@ -24,16 +24,19 @@ package hello.world;
 
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse;
-import com.bolt.bolt_embed.models.operations.TestingAccountCreateSecurity;
 import com.bolt.bolt_embed.models.shared.AccountTestCreationDataEmailState;
 import com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput;
 import com.bolt.bolt_embed.models.shared.AccountTestCreationDataPhoneState;
+import com.bolt.bolt_embed.models.shared.Security;
 import java.time.OffsetDateTime;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("quo") {{
+                    apiKey = "";
+                }})
                 .build();
 
             com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput req = new AccountTestCreationDataInput(OffsetDateTime.parse("2017-07-21T17:32:28Z"), AccountTestCreationDataEmailState.UNVERIFIED, AccountTestCreationDataPhoneState.VERIFIED) {{
@@ -41,9 +44,7 @@ public class Application {
                 isMigrated = true;
             }};            
 
-            TestingAccountCreateResponse res = sdk.testing.createAccount(req, new TestingAccountCreateSecurity("perferendis") {{
-                apiKey = "";
-            }});
+            TestingAccountCreateResponse res = sdk.testing.createAccount(req);
 
             if (res.accountTestCreationData != null) {
                 // handle response
@@ -57,10 +58,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                     | [com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md)         | :heavy_check_mark:                                                                                                            | The request object to use for the request.                                                                                    |
-| `security`                                                                                                                    | [com.bolt.bolt_embed.models.operations.TestingAccountCreateSecurity](../../models/operations/TestingAccountCreateSecurity.md) | :heavy_check_mark:                                                                                                            | The security requirements to use for the request.                                                                             |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                             | [com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
 
 
 ### Response
@@ -82,7 +82,7 @@ package hello.world;
 
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse;
-import com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateSecurity;
+import com.bolt.bolt_embed.models.shared.Security;
 import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate;
 import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateStatus;
 import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails;
@@ -93,6 +93,9 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("odit") {{
+                    apiKey = "";
+                }})
                 .build();
 
             com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT,                 new com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails[]{{
@@ -109,9 +112,7 @@ public class Application {
                 deliveryDate = OffsetDateTime.parse("2014-08-23:T06:00:00Z");
             }};            
 
-            TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req, new TestingShipmentTrackingCreateSecurity("ipsam") {{
-                apiKey = "";
-            }});
+            TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req);
 
             if (res.statusCode == 200) {
                 // handle response
@@ -125,10 +126,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                                                       | Type                                                                                                                                            | Required                                                                                                                                        | Description                                                                                                                                     |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                       | [com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate](../../models/shared/ShipmentTrackingUpdate.md)                                       | :heavy_check_mark:                                                                                                                              | The request object to use for the request.                                                                                                      |
-| `security`                                                                                                                                      | [com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateSecurity](../../models/operations/TestingShipmentTrackingCreateSecurity.md) | :heavy_check_mark:                                                                                                                              | The security requirements to use for the request.                                                                                               |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                 | [com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate](../../models/shared/ShipmentTrackingUpdate.md) | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
 
 
 ### Response
@@ -149,17 +149,18 @@ package hello.world;
 
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse;
-import com.bolt.bolt_embed.models.operations.TestingCreditCardGetSecurity;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("at") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            TestingCreditCardGetResponse res = sdk.testing.getCreditCard(new TestingCreditCardGetSecurity("repellendus") {{
-                apiKey = "";
-            }});
+            TestingCreditCardGetResponse res = sdk.testing.getCreditCard();
 
             if (res.creditCard != null) {
                 // handle response
@@ -170,12 +171,6 @@ public class Application {
     }
 }
 ```
-
-### Parameters
-
-| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                    | [com.bolt.bolt_embed.models.operations.TestingCreditCardGetSecurity](../../models/operations/TestingCreditCardGetSecurity.md) | :heavy_check_mark:                                                                                                            | The security requirements to use for the request.                                                                             |
 
 
 ### Response

@@ -25,7 +25,6 @@ package hello.world;
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest;
 import com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse;
-import com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeSecurity;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicit;
 import com.bolt.bolt_embed.models.shared.AddressReferenceExplicitTag;
 import com.bolt.bolt_embed.models.shared.AddressReferenceId;
@@ -38,14 +37,18 @@ import com.bolt.bolt_embed.models.shared.CartShipment;
 import com.bolt.bolt_embed.models.shared.GuestPaymentMethodInitializeRequest;
 import com.bolt.bolt_embed.models.shared.PaymentMethodPaypal;
 import com.bolt.bolt_embed.models.shared.PaymentMethodPaypalTag;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("quis") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("nisi",                 new GuestPaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
+            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("veritatis",                 new GuestPaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
                                                                 tax = 900L;
                                                             }};, "order_100") {{
                                                 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -101,9 +104,7 @@ public class Application {
                                                 }};
                                             }};,                 new PaymentMethodPaypal(PaymentMethodPaypalTag.PAYPAL, "www.example.com/handle_paypal_cancel", "www.example.com/handle_paypal_success");););            
 
-            GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req, new GuestPaymentsInitializeSecurity("temporibus") {{
-                apiKey = "";
-            }});
+            GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req);
 
             if (res.paymentMethodInitializeResponse != null) {
                 // handle response
@@ -117,10 +118,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                                           | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                           | [com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest](../../models/operations/GuestPaymentsInitializeRequest.md)   | :heavy_check_mark:                                                                                                                  | The request object to use for the request.                                                                                          |
-| `security`                                                                                                                          | [com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeSecurity](../../models/operations/GuestPaymentsInitializeSecurity.md) | :heavy_check_mark:                                                                                                                  | The security requirements to use for the request.                                                                                   |
+| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                         | [com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest](../../models/operations/GuestPaymentsInitializeRequest.md) | :heavy_check_mark:                                                                                                                | The request object to use for the request.                                                                                        |
 
 
 ### Response
@@ -157,6 +157,7 @@ import com.bolt.bolt_embed.models.shared.CartShipment;
 import com.bolt.bolt_embed.models.shared.PaymentMethodInitializeRequest;
 import com.bolt.bolt_embed.models.shared.PaymentMethodSavedPaymentMethod;
 import com.bolt.bolt_embed.models.shared.PaymentMethodSavedPaymentMethodTag;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -164,7 +165,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            PaymentsInitializeRequest req = new PaymentsInitializeRequest("ab",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
+            PaymentsInitializeRequest req = new PaymentsInitializeRequest("perferendis",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
                                                                 tax = 900L;
                                                             }};, "order_100") {{
                                                 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -210,7 +211,7 @@ public class Application {
                                             }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id");););            
 
             PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity() {{
-                option1 = new PaymentsInitializeSecurityOption1("veritatis", "deserunt") {{
+                option1 = new PaymentsInitializeSecurityOption1("repellendus", "sapiente") {{
                     apiKey = "";
                     oauth = "";
                 }};

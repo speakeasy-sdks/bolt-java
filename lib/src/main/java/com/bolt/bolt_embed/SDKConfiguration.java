@@ -5,6 +5,7 @@
 package com.bolt.bolt_embed;
 
 import com.bolt.bolt_embed.utils.HTTPClient;
+import com.bolt.bolt_embed.models.shared.Security;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 class SDKConfiguration {
 	public HTTPClient defaultClient;
 	public HTTPClient securityClient;
-	
+	public Security security;
 	public String serverUrl;
 	public int serverIdx = 0;
 	List<Map<String, String>> serverDefaults = new ArrayList<Map<String, String>>(){{
@@ -26,8 +27,8 @@ class SDKConfiguration {
 	}};
 	public String language = "java";
 	public String openapiDocVersion = "3.0.1";
-	public String sdkVersion = "0.3.3";
-	public String genVersion = "2.118.1";
+	public String sdkVersion = "0.4.0";
+	public String genVersion = "2.125.1";
 	
 	public Map<String, String> getServerVariableDefaults() {
 		return serverDefaults.get(this.serverIdx);

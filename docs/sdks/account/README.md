@@ -31,6 +31,7 @@ import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -38,7 +39,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("quibusdam",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
+            AccountAddressCreateRequest req = new AccountAddressCreateRequest("corrupti",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
                                 company = "ACME Corporation";
                                 email = "alice@example.com";
                                 id = "D4g3h5tBuVYK9";
@@ -49,7 +50,7 @@ public class Application {
                             }};);            
 
             AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity() {{
-                option1 = new AccountAddressCreateSecurityOption1("unde", "nulla") {{
+                option1 = new AccountAddressCreateSecurityOption1("illum", "vel") {{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -105,6 +106,7 @@ import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard;
 import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardNetwork;
 import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardTag;
 import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardType;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -112,7 +114,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("corrupti",                 new PaymentMethodCreditCard(PaymentMethodCreditCardTag.CREDIT_CARD, "411111", "2025-03", "1004", PaymentMethodCreditCardNetwork.VISA, "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0", PaymentMethodCreditCardType.CREDIT) {{
+            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("error",                 new PaymentMethodCreditCard(PaymentMethodCreditCardTag.CREDIT_CARD, "411111", "2025-03", "1004", PaymentMethodCreditCardNetwork.VISA, "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0", PaymentMethodCreditCardType.CREDIT) {{
                                 billingAddressId = "D4g3h5tBuVYK9";
                                 billingAddressInput = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
                                     company = "ACME Corporation";
@@ -126,7 +128,7 @@ public class Application {
                             }};);            
 
             AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity() {{
-                option1 = new AccountAddPaymentMethodSecurityOption1("vel", "error") {{
+                option1 = new AccountAddPaymentMethodSecurityOption1("suscipit", "iure") {{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -172,6 +174,7 @@ import com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddressDeleteSecurityOption2;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -179,10 +182,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("deserunt", "D4g3h5tBuVYK9");            
+            AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("magnam", "D4g3h5tBuVYK9");            
 
             AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity() {{
-                option1 = new AccountAddressDeleteSecurityOption1("suscipit", "iure") {{
+                option1 = new AccountAddressDeleteSecurityOption1("debitis", "ipsa") {{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -230,6 +233,7 @@ import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddressEditSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -237,7 +241,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressEditRequest req = new AccountAddressEditRequest("magnam",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
+            AccountAddressEditRequest req = new AccountAddressEditRequest("delectus",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
                                 company = "ACME Corporation";
                                 email = "alice@example.com";
                                 id = "D4g3h5tBuVYK9";
@@ -248,7 +252,7 @@ public class Application {
                             }};, "D4g3h5tBuVYK9");            
 
             AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity() {{
-                option1 = new AccountAddressEditSecurityOption1("debitis", "ipsa") {{
+                option1 = new AccountAddressEditSecurityOption1("tempora", "suscipit") {{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -291,14 +295,18 @@ import com.bolt.bolt_embed.models.operations.AccountExistsRequest;
 import com.bolt.bolt_embed.models.operations.AccountExistsResponse;
 import com.bolt.bolt_embed.models.shared.Identifier;
 import com.bolt.bolt_embed.models.shared.IdentifierIdentifierType;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("molestiae") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            AccountExistsRequest req = new AccountExistsRequest("delectus",                 new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"););            
+            AccountExistsRequest req = new AccountExistsRequest("minus",                 new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"););            
 
             AccountExistsResponse res = sdk.account.exists(req);
 
@@ -339,6 +347,7 @@ import com.bolt.bolt_embed.models.operations.AccountGetResponse;
 import com.bolt.bolt_embed.models.operations.AccountGetSecurity;
 import com.bolt.bolt_embed.models.operations.AccountGetSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountGetSecurityOption2;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -346,10 +355,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountGetRequest req = new AccountGetRequest("tempora");            
+            AccountGetRequest req = new AccountGetRequest("placeat");            
 
             AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity() {{
-                option1 = new AccountGetSecurityOption1("suscipit", "molestiae") {{
+                option1 = new AccountGetSecurityOption1("voluptatum", "iusto") {{
                     apiKey = "";
                     oauth = "";
                 }};

@@ -31,11 +31,10 @@ public class Webhooks {
      * Create a webhook to subscribe to certain events
      * Create a new webhook to receive notifications from Bolt about various events, such as transaction status.
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.WebhooksCreateResponse create(com.bolt.bolt_embed.models.shared.WebhookInput request, com.bolt.bolt_embed.models.operations.WebhooksCreateSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.WebhooksCreateResponse create(com.bolt.bolt_embed.models.shared.WebhookInput request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/webhooks");
         
@@ -51,7 +50,7 @@ public class Webhooks {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -77,11 +76,10 @@ public class Webhooks {
      * Delete an existing webhook
      * Delete an existing webhook. You will no longer receive notifications from Bolt about its events.
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse delete(com.bolt.bolt_embed.models.operations.WebhooksDeleteRequest request, com.bolt.bolt_embed.models.operations.WebhooksDeleteSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse delete(com.bolt.bolt_embed.models.operations.WebhooksDeleteRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(com.bolt.bolt_embed.models.operations.WebhooksDeleteRequest.class, baseUrl, "/webhooks/{id}", request, null);
         
@@ -92,7 +90,7 @@ public class Webhooks {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -120,11 +118,10 @@ public class Webhooks {
      * Retrieve information for a specific webhook
      * Retrieve information for an existing webhook.
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.WebhooksGetResponse get(com.bolt.bolt_embed.models.operations.WebhooksGetRequest request, com.bolt.bolt_embed.models.operations.WebhooksGetSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.WebhooksGetResponse get(com.bolt.bolt_embed.models.operations.WebhooksGetRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(com.bolt.bolt_embed.models.operations.WebhooksGetRequest.class, baseUrl, "/webhooks/{id}", request, null);
         
@@ -135,7 +132,7 @@ public class Webhooks {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -169,11 +166,10 @@ public class Webhooks {
      * Retrieve information about all existing webhooks
      * Retrieve information about all existing webhooks.
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse getAll(com.bolt.bolt_embed.models.operations.WebhooksGetAllRequest request, com.bolt.bolt_embed.models.operations.WebhooksGetAllSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse getAll(com.bolt.bolt_embed.models.operations.WebhooksGetAllRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/webhooks");
         
@@ -192,7 +188,7 @@ public class Webhooks {
             }
         }
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 

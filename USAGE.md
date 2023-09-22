@@ -11,6 +11,7 @@ import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {

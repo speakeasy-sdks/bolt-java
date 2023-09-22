@@ -14,14 +14,12 @@
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.3.3'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.4.0'
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```java
 package hello.world;
 
@@ -32,6 +30,7 @@ import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddressCreateSecurityOption2;
 import com.bolt.bolt_embed.models.shared.AddressListing;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
@@ -39,7 +38,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("corrupti",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
+            AccountAddressCreateRequest req = new AccountAddressCreateRequest("quibusdam",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
                                 company = "ACME Corporation";
                                 email = "alice@example.com";
                                 id = "D4g3h5tBuVYK9";
@@ -50,7 +49,7 @@ public class Application {
                             }};);            
 
             AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity() {{
-                option1 = new AccountAddressCreateSecurityOption1("provident", "distinctio") {{
+                option1 = new AccountAddressCreateSecurityOption1("unde", "nulla") {{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -104,6 +103,18 @@ public class Application {
 * [get](docs/sdks/webhooks/README.md#get) - Retrieve information for a specific webhook
 * [getAll](docs/sdks/webhooks/README.md#getall) - Retrieve information about all existing webhooks
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

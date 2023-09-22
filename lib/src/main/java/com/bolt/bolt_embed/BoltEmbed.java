@@ -74,6 +74,16 @@ public class BoltEmbed {
 		}
 		
 		/**
+		 * Configures the SDK to use the provided security details.
+		 * @param security The security details to use for all requests.
+		 * @return The builder instance.
+		 */
+		public Builder setSecurity(com.bolt.bolt_embed.models.shared.Security security) {
+			this.sdkConfiguration.security = security;
+			return this;
+		}
+		
+		/**
 		 * Allows the overriding of the default server URL.
 		 * @param serverUrl The server URL to use for all requests.
 		 * @return The builder instance.
@@ -158,6 +168,10 @@ public class BoltEmbed {
 		public BoltEmbed build() throws Exception {
 			if (this.sdkConfiguration.defaultClient == null) {
 				this.sdkConfiguration.defaultClient = new SpeakeasyHTTPClient();
+			}
+			
+			if (this.sdkConfiguration.security != null) {
+				this.sdkConfiguration.securityClient = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, this.sdkConfiguration.security);
 			}
 			
 			if (this.sdkConfiguration.securityClient == null) {

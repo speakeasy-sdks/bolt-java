@@ -31,11 +31,10 @@ public class Testing {
      * Create a Bolt shopper account for testing purposes.
      * 
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse createAccount(com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput request, com.bolt.bolt_embed.models.operations.TestingAccountCreateSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse createAccount(com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/testing/accounts");
         
@@ -51,7 +50,7 @@ public class Testing {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -80,11 +79,10 @@ public class Testing {
      * information to shipments associated with orders.
      * 
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse createShipmentTracking(com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate request, com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse createShipmentTracking(com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/testing/shipments");
         
@@ -100,7 +98,7 @@ public class Testing {
         req.addHeader("Accept", "*/*");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -121,11 +119,10 @@ public class Testing {
      * Retrieve test credit card information. This includes its token, which is
      * generated against the `4111 1111 1111 1004` test card.
      * 
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse getCreditCard(com.bolt.bolt_embed.models.operations.TestingCreditCardGetSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse getCreditCard() throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/testing/credit-cards");
         
@@ -136,7 +133,7 @@ public class Testing {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 

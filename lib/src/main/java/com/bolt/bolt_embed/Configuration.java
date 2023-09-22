@@ -30,11 +30,10 @@ public class Configuration {
      * Return callback URLs configured on the merchant such as OAuth URLs.
      * 
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse getmerchantCallback(com.bolt.bolt_embed.models.operations.MerchantCallbacksGetRequest request, com.bolt.bolt_embed.models.operations.MerchantCallbacksGetSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse getmerchantCallback(com.bolt.bolt_embed.models.operations.MerchantCallbacksGetRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/merchant/callbacks");
         
@@ -53,7 +52,7 @@ public class Configuration {
             }
         }
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -78,11 +77,10 @@ public class Configuration {
     /**
      * Retrieve identifiers for the merchant
      * Return several identifiers for the merchant, such as public IDs, publishable keys, signing secrets, etc...
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse getmerchantIdenitfier(com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse getmerchantIdenitfier() throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/merchant/identifiers");
         
@@ -93,7 +91,7 @@ public class Configuration {
         req.addHeader("Accept", "application/json");
         req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
@@ -120,11 +118,10 @@ public class Configuration {
      * Update and configure callback URLs on the merchant such as OAuth URLs.
      * 
      * @param request the request object containing all of the parameters for the API call
-     * @param security the security details to use for authentication
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse updatemerchantCallback(com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateRequest request, com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateSecurity security) throws Exception {
+    public com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse updatemerchantCallback(com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateRequest request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/merchant/callbacks");
         
@@ -148,7 +145,7 @@ public class Configuration {
             }
         }
         
-        HTTPClient client = com.bolt.bolt_embed.utils.Utils.configureSecurityClient(this.sdkConfiguration.defaultClient, security);
+        HTTPClient client = this.sdkConfiguration.securityClient;
         
         HttpResponse<byte[]> httpRes = client.send(req);
 

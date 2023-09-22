@@ -25,19 +25,20 @@ package hello.world;
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.MerchantCallbacksGetRequest;
 import com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse;
-import com.bolt.bolt_embed.models.operations.MerchantCallbacksGetSecurity;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("excepturi") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            MerchantCallbacksGetRequest req = new MerchantCallbacksGetRequest("minus");            
+            MerchantCallbacksGetRequest req = new MerchantCallbacksGetRequest("nisi");            
 
-            MerchantCallbacksGetResponse res = sdk.configuration.getmerchantCallback(req, new MerchantCallbacksGetSecurity("placeat") {{
-                apiKey = "";
-            }});
+            MerchantCallbacksGetResponse res = sdk.configuration.getmerchantCallback(req);
 
             if (res.callbackUrls != null) {
                 // handle response
@@ -51,10 +52,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                     | [com.bolt.bolt_embed.models.operations.MerchantCallbacksGetRequest](../../models/operations/MerchantCallbacksGetRequest.md)   | :heavy_check_mark:                                                                                                            | The request object to use for the request.                                                                                    |
-| `security`                                                                                                                    | [com.bolt.bolt_embed.models.operations.MerchantCallbacksGetSecurity](../../models/operations/MerchantCallbacksGetSecurity.md) | :heavy_check_mark:                                                                                                            | The security requirements to use for the request.                                                                             |
+| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
+| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                   | [com.bolt.bolt_embed.models.operations.MerchantCallbacksGetRequest](../../models/operations/MerchantCallbacksGetRequest.md) | :heavy_check_mark:                                                                                                          | The request object to use for the request.                                                                                  |
 
 
 ### Response
@@ -73,17 +73,18 @@ package hello.world;
 
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse;
-import com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetSecurity;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("recusandae") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            MerchantIdentifiersGetResponse res = sdk.configuration.getmerchantIdenitfier(new MerchantIdentifiersGetSecurity("voluptatum") {{
-                apiKey = "";
-            }});
+            MerchantIdentifiersGetResponse res = sdk.configuration.getmerchantIdenitfier();
 
             if (res.identifiers != null) {
                 // handle response
@@ -94,12 +95,6 @@ public class Application {
     }
 }
 ```
-
-### Parameters
-
-| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                        | [com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetSecurity](../../models/operations/MerchantIdentifiersGetSecurity.md) | :heavy_check_mark:                                                                                                                | The security requirements to use for the request.                                                                                 |
 
 
 ### Response
@@ -120,16 +115,19 @@ package hello.world;
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateRequest;
 import com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse;
-import com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateSecurity;
 import com.bolt.bolt_embed.models.shared.CallbackUrls;
+import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
+                .setSecurity(new Security("temporibus") {{
+                    apiKey = "";
+                }})
                 .build();
 
-            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("iusto",                 new CallbackUrls() {{
+            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("ab",                 new CallbackUrls() {{
                                 accountPage = "https://www.example.com/account";
                                 baseDomain = "https://www.example.com/";
                                 confirmationRedirect = "https://www.example.com/bolt/redirect";
@@ -151,9 +149,7 @@ public class Application {
                                 validateAdditionalAccountData = "https://www.example.com/bolt/validate-account";
                             }};);            
 
-            MerchantCallbacksUpdateResponse res = sdk.configuration.updatemerchantCallback(req, new MerchantCallbacksUpdateSecurity("excepturi") {{
-                apiKey = "";
-            }});
+            MerchantCallbacksUpdateResponse res = sdk.configuration.updatemerchantCallback(req);
 
             if (res.callbackUrls != null) {
                 // handle response
@@ -167,10 +163,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                                           | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                           | [com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateRequest](../../models/operations/MerchantCallbacksUpdateRequest.md)   | :heavy_check_mark:                                                                                                                  | The request object to use for the request.                                                                                          |
-| `security`                                                                                                                          | [com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateSecurity](../../models/operations/MerchantCallbacksUpdateSecurity.md) | :heavy_check_mark:                                                                                                                  | The security requirements to use for the request.                                                                                   |
+| Parameter                                                                                                                         | Type                                                                                                                              | Required                                                                                                                          | Description                                                                                                                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                         | [com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateRequest](../../models/operations/MerchantCallbacksUpdateRequest.md) | :heavy_check_mark:                                                                                                                | The request object to use for the request.                                                                                        |
 
 
 ### Response
