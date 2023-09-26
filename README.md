@@ -14,7 +14,7 @@
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.4.0'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.5.0'
 ```
 <!-- End SDK Installation -->
 
@@ -107,8 +107,6 @@ public class Application {
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
