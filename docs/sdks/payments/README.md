@@ -44,12 +44,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("quis") {{
+                .setSecurity(new Security("Shirt") {{
                     apiKey = "";
                 }})
                 .build();
 
-            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("veritatis",                 new GuestPaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
+            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("Grocery",                 new GuestPaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
                                                                 tax = 900L;
                                                             }};, "order_100") {{
                                                 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -80,20 +80,9 @@ public class Application {
                                                 orderDescription = "Order #1234567890";
                                                 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
                                                     add(new CartShipment() {{
-                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
-                                                            company = "ACME Corporation";
-                                                            countryCode = "US";
-                                                            email = "alice@example.com";
-                                                            firstName = "Alice";
+                                                        address = new AddressReferenceId(AddressReferenceIdTag.ID, "D4g3h5tBuVYK9") {{
+                                                            dotTag = AddressReferenceIdTag.ID;
                                                             id = "D4g3h5tBuVYK9";
-                                                            lastName = "Baker";
-                                                            locality = "San Francisco";
-                                                            phone = "+14155550199";
-                                                            postalCode = "94105";
-                                                            region = "CA";
-                                                            streetAddress1 = "535 Mission St, Ste 1401";
-                                                            streetAddress2 = "c/o Shipping Department";
                                                         }};
                                                         carrier = "FedEx";
                                                         cost = new Amounts("USD", 900L) {{
@@ -166,7 +155,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            PaymentsInitializeRequest req = new PaymentsInitializeRequest("perferendis",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
+            PaymentsInitializeRequest req = new PaymentsInitializeRequest("Dam",                 new PaymentMethodInitializeRequest(                new Cart(                new Amounts("USD", 900L) {{
                                                                 tax = 900L;
                                                             }};, "order_100") {{
                                                 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -197,9 +186,20 @@ public class Application {
                                                 orderDescription = "Order #1234567890";
                                                 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
                                                     add(new CartShipment() {{
-                                                        address = new AddressReferenceId(AddressReferenceIdTag.ID, "D4g3h5tBuVYK9") {{
-                                                            dotTag = AddressReferenceIdTag.ID;
+                                                        address = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
+                                                            dotTag = AddressReferenceExplicitTag.EXPLICIT;
+                                                            company = "ACME Corporation";
+                                                            countryCode = "US";
+                                                            email = "alice@example.com";
+                                                            firstName = "Alice";
                                                             id = "D4g3h5tBuVYK9";
+                                                            lastName = "Baker";
+                                                            locality = "San Francisco";
+                                                            phone = "+14155550199";
+                                                            postalCode = "94105";
+                                                            region = "CA";
+                                                            streetAddress1 = "535 Mission St, Ste 1401";
+                                                            streetAddress2 = "c/o Shipping Department";
                                                         }};
                                                         carrier = "FedEx";
                                                         cost = new Amounts("USD", 900L) {{
@@ -212,7 +212,7 @@ public class Application {
                                             }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id");););            
 
             PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity() {{
-                option1 = new PaymentsInitializeSecurityOption1("repellendus", "sapiente") {{
+                option1 = new PaymentsInitializeSecurityOption1("Saint", "invoice") {{
                     apiKey = "";
                     oauth = "";
                 }};

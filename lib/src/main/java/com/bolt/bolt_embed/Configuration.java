@@ -42,7 +42,7 @@ public class Configuration {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
+        req.addHeader("user-agent", this.sdkConfiguration.userAgent);
         java.util.Map<String, java.util.List<String>> headers = com.bolt.bolt_embed.utils.Utils.getHeaders(request);
         if (headers != null) {
             for (java.util.Map.Entry<String, java.util.List<String>> header : headers.entrySet()) {
@@ -89,7 +89,7 @@ public class Configuration {
         req.setURL(url);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
+        req.addHeader("user-agent", this.sdkConfiguration.userAgent);
         
         HTTPClient client = this.sdkConfiguration.securityClient;
         
@@ -135,7 +135,7 @@ public class Configuration {
         req.setBody(serializedRequestBody);
 
         req.addHeader("Accept", "application/json");
-        req.addHeader("user-agent", String.format("speakeasy-sdk/%s %s %s %s", this.sdkConfiguration.language, this.sdkConfiguration.sdkVersion, this.sdkConfiguration.genVersion, this.sdkConfiguration.openapiDocVersion));
+        req.addHeader("user-agent", this.sdkConfiguration.userAgent);
         java.util.Map<String, java.util.List<String>> headers = com.bolt.bolt_embed.utils.Utils.getHeaders(request);
         if (headers != null) {
             for (java.util.Map.Entry<String, java.util.List<String>> header : headers.entrySet()) {

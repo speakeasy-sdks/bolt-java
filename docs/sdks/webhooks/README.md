@@ -41,7 +41,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("at") {{
+                .setSecurity(new Security("online") {{
                     apiKey = "";
                 }})
                 .build();
@@ -97,7 +97,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("molestiae") {{
+                .setSecurity(new Security("program") {{
                     apiKey = "";
                 }})
                 .build();
@@ -146,7 +146,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("quod") {{
+                .setSecurity(new Security("female") {{
                     apiKey = "";
                 }})
                 .build();
@@ -195,12 +195,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("quod") {{
+                .setSecurity(new Security("UDP") {{
                     apiKey = "";
                 }})
                 .build();
 
-            WebhooksGetAllRequest req = new WebhooksGetAllRequest("esse");            
+            WebhooksGetAllRequest req = new WebhooksGetAllRequest("and");            
 
             WebhooksGetAllResponse res = sdk.webhooks.getAll(req);
 
