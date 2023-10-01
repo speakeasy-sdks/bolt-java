@@ -153,7 +153,7 @@ public class Configuration {
 
         com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse res = new com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse(contentType, httpRes.statusCode()) {{
             callbackUrls = null;
-            callbackUrlErrorInvalidUrl = null;
+            merchantCallbacksUpdate400ApplicationJSONOneOf = null;
         }};
         res.rawResponse = httpRes;
         
@@ -167,8 +167,8 @@ public class Configuration {
         else if (httpRes.statusCode() == 400) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
                 ObjectMapper mapper = JSON.getMapper();
-                com.bolt.bolt_embed.models.shared.CallbackUrlErrorInvalidUrl out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), com.bolt.bolt_embed.models.shared.CallbackUrlErrorInvalidUrl.class);
-                res.callbackUrlErrorInvalidUrl = out;
+                Object out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), Object.class);
+                res.merchantCallbacksUpdate400ApplicationJSONOneOf = out;
             }
         }
 

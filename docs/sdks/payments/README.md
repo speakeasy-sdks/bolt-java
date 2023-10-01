@@ -92,7 +92,11 @@ public class Application {
                                                         }};
                                                     }}),
                                                 }};
-                                            }};,                 new PaymentMethodPaypal(PaymentMethodPaypalTag.PAYPAL, "www.example.com/handle_paypal_cancel", "www.example.com/handle_paypal_success");););            
+                                            }};,                 new PaymentMethodPaypal(PaymentMethodPaypalTag.PAYPAL, "www.example.com/handle_paypal_cancel", "www.example.com/handle_paypal_success") {{
+                                                dotTag = PaymentMethodPaypalTag.PAYPAL;
+                                                cancel = "www.example.com/handle_paypal_cancel";
+                                                success = "www.example.com/handle_paypal_success";
+                                            }}););            
 
             GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req);
 
@@ -209,7 +213,10 @@ public class Application {
                                                         }};
                                                     }}),
                                                 }};
-                                            }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id");););            
+                                            }};,                 new PaymentMethodSavedPaymentMethod(PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD, "id") {{
+                                                dotTag = PaymentMethodSavedPaymentMethodTag.SAVED_PAYMENT_METHOD;
+                                                id = "id";
+                                            }}););            
 
             PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity() {{
                 option1 = new PaymentsInitializeSecurityOption1("Saint", "invoice") {{

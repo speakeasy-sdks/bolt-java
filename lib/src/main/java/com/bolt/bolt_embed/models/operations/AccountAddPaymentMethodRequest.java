@@ -9,6 +9,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class AccountAddPaymentMethodRequest {
+    @SpeakeasyMetadata("request:mediaType=application/json")
+    public Object requestBody;
+
+    public AccountAddPaymentMethodRequest withRequestBody(Object requestBody) {
+        this.requestBody = requestBody;
+        return this;
+    }
+    
     /**
      * The publicly viewable identifier used to identify a merchant division.
      */
@@ -20,16 +28,8 @@ public class AccountAddPaymentMethodRequest {
         return this;
     }
     
-    @SpeakeasyMetadata("request:mediaType=application/json")
-    public com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard paymentMethodCreditCard;
-
-    public AccountAddPaymentMethodRequest withPaymentMethodCreditCard(com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard paymentMethodCreditCard) {
-        this.paymentMethodCreditCard = paymentMethodCreditCard;
-        return this;
-    }
-    
-    public AccountAddPaymentMethodRequest(@JsonProperty("X-Publishable-Key") String xPublishableKey, @JsonProperty("payment-method-credit-card") com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard paymentMethodCreditCard) {
+    public AccountAddPaymentMethodRequest(@JsonProperty("RequestBody") Object requestBody, @JsonProperty("X-Publishable-Key") String xPublishableKey) {
+        this.requestBody = requestBody;
         this.xPublishableKey = xPublishableKey;
-        this.paymentMethodCreditCard = paymentMethodCreditCard;
   }
 }

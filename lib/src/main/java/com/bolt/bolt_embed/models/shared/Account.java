@@ -19,9 +19,9 @@ public class Account {
     }
     
     @JsonProperty("payment_methods")
-    public PaymentMethodCreditCard[] paymentMethods;
+    public Object[] paymentMethods;
 
-    public Account withPaymentMethods(PaymentMethodCreditCard[] paymentMethods) {
+    public Account withPaymentMethods(Object[] paymentMethods) {
         this.paymentMethods = paymentMethods;
         return this;
     }
@@ -35,7 +35,7 @@ public class Account {
         return this;
     }
     
-    public Account(@JsonProperty("addresses") AddressListing[] addresses, @JsonProperty("payment_methods") PaymentMethodCreditCard[] paymentMethods) {
+    public Account(@JsonProperty("addresses") AddressListing[] addresses, @JsonProperty("payment_methods") Object[] paymentMethods) {
         this.addresses = addresses;
         this.paymentMethods = paymentMethods;
   }
