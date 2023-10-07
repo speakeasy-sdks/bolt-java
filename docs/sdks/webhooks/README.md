@@ -28,12 +28,6 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.callbacks.WebhooksCreateWebhookEventRequestBody;
 import com.bolt.bolt_embed.models.callbacks.WebhooksCreateWebhookEventResponse;
 import com.bolt.bolt_embed.models.operations.WebhooksCreateResponse;
-import com.bolt.bolt_embed.models.shared.EventGroup;
-import com.bolt.bolt_embed.models.shared.EventGroupEventGroup;
-import com.bolt.bolt_embed.models.shared.EventGroupTag;
-import com.bolt.bolt_embed.models.shared.EventList;
-import com.bolt.bolt_embed.models.shared.EventListEventList;
-import com.bolt.bolt_embed.models.shared.EventListTag;
 import com.bolt.bolt_embed.models.shared.Security;
 import com.bolt.bolt_embed.models.shared.WebhookInput;
 
@@ -41,19 +35,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("online") {{
+                .setSecurity(new Security("online"){{
                     apiKey = "";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput(                new EventList(EventListTag.LIST,                 new com.bolt.bolt_embed.models.shared.EventListEventList[]{{
-                                                add(EventListEventList.AUTH),
-                                            }}) {{
-                                dotTag = EventListTag.LIST;
-                                eventList = new com.bolt.bolt_embed.models.shared.EventListEventList[]{{
-                                    add(EventListEventList.AUTH),
-                                }};
-                            }}, "https://www.example.com/webhook");            
+            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput("Configuration", "https://www.example.com/webhook");            
 
             WebhooksCreateResponse res = sdk.webhooks.create(req);
 
@@ -97,7 +84,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("program") {{
+                .setSecurity(new Security("program"){{
                     apiKey = "";
                 }})
                 .build();
@@ -146,7 +133,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("female") {{
+                .setSecurity(new Security("female"){{
                     apiKey = "";
                 }})
                 .build();
@@ -195,7 +182,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("UDP") {{
+                .setSecurity(new Security("UDP"){{
                     apiKey = "";
                 }})
                 .build();

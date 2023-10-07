@@ -40,18 +40,18 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("Sedan",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                company = "ACME Corporation";
-                                email = "alice@example.com";
-                                id = "D4g3h5tBuVYK9";
-                                isDefault = true;
-                                phone = "+14155550199";
-                                region = "CA";
-                                streetAddress2 = "c/o Shipping Department";
-                            }};);            
+            AccountAddressCreateRequest req = new AccountAddressCreateRequest("Sedan", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
+company = "ACME Corporation";
+email = "alice@example.com";
+id = "D4g3h5tBuVYK9";
+isDefault = true;
+phone = "+14155550199";
+region = "CA";
+streetAddress2 = "c/o Shipping Department";
+}});            
 
-            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity() {{
-                option1 = new AccountAddressCreateSecurityOption1("F2M", "placeat") {{
+            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(){{
+                option1 = new AccountAddressCreateSecurityOption1("F2M", "placeat"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -99,14 +99,6 @@ import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurity;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurityOption1;
 import com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodSecurityOption2;
-import com.bolt.bolt_embed.models.shared.AddressReferenceExplicit;
-import com.bolt.bolt_embed.models.shared.AddressReferenceExplicitTag;
-import com.bolt.bolt_embed.models.shared.AddressReferenceId;
-import com.bolt.bolt_embed.models.shared.AddressReferenceIdTag;
-import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCard;
-import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardNetwork;
-import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardTag;
-import com.bolt.bolt_embed.models.shared.PaymentMethodCreditCardType;
 import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
@@ -115,35 +107,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest(                new PaymentMethodCreditCard(PaymentMethodCreditCardTag.CREDIT_CARD, "411111", "2025-03", "1004", PaymentMethodCreditCardNetwork.VISA, "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0", PaymentMethodCreditCardType.CREDIT) {{
-                                dotTag = PaymentMethodCreditCardTag.CREDIT_CARD;
-                                billingAddressId = "D4g3h5tBuVYK9";
-                                billingAddressInput = new AddressReferenceExplicit(AddressReferenceExplicitTag.EXPLICIT, "US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                    dotTag = AddressReferenceExplicitTag.EXPLICIT;
-                                    company = "ACME Corporation";
-                                    countryCode = "US";
-                                    email = "alice@example.com";
-                                    firstName = "Alice";
-                                    id = "D4g3h5tBuVYK9";
-                                    lastName = "Baker";
-                                    locality = "San Francisco";
-                                    phone = "+14155550199";
-                                    postalCode = "94105";
-                                    region = "CA";
-                                    streetAddress1 = "535 Mission St, Ste 1401";
-                                    streetAddress2 = "c/o Shipping Department";
-                                }};
-                                bin = "411111";
-                                expiration = "2025-03";
-                                id = "X5h6j8uLpVGK0";
-                                last4 = "1004";
-                                network = PaymentMethodCreditCardNetwork.VISA;
-                                token = "a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0";
-                                type = PaymentMethodCreditCardType.CREDIT;
-                            }}, "violet");            
+            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("Data", "payment");            
 
-            AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity() {{
-                option1 = new AccountAddPaymentMethodSecurityOption1("Scandium", "Tobago") {{
+            AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity(){{
+                option1 = new AccountAddPaymentMethodSecurityOption1("violet", "Gasoline"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -199,8 +166,8 @@ public class Application {
 
             AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("candela", "D4g3h5tBuVYK9");            
 
-            AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity() {{
-                option1 = new AccountAddressDeleteSecurityOption1("Rial", "Configurable") {{
+            AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity(){{
+                option1 = new AccountAddressDeleteSecurityOption1("Rial", "Configurable"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -256,18 +223,18 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressEditRequest req = new AccountAddressEditRequest("Customer",                 new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401") {{
-                                company = "ACME Corporation";
-                                email = "alice@example.com";
-                                id = "D4g3h5tBuVYK9";
-                                isDefault = true;
-                                phone = "+14155550199";
-                                region = "CA";
-                                streetAddress2 = "c/o Shipping Department";
-                            }};, "D4g3h5tBuVYK9");            
+            AccountAddressEditRequest req = new AccountAddressEditRequest("Customer", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
+company = "ACME Corporation";
+email = "alice@example.com";
+id = "D4g3h5tBuVYK9";
+isDefault = true;
+phone = "+14155550199";
+region = "CA";
+streetAddress2 = "c/o Shipping Department";
+}}, "D4g3h5tBuVYK9");            
 
-            AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity() {{
-                option1 = new AccountAddressEditSecurityOption1("Investor", "Demiflux") {{
+            AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity(){{
+                option1 = new AccountAddressEditSecurityOption1("Investor", "Demiflux"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -316,12 +283,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("Keyboard") {{
+                .setSecurity(new Security("Keyboard"){{
                     apiKey = "";
                 }})
                 .build();
 
-            AccountExistsRequest req = new AccountExistsRequest("Producer",                 new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"););            
+            AccountExistsRequest req = new AccountExistsRequest("Producer", new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"));            
 
             AccountExistsResponse res = sdk.account.exists(req);
 
@@ -372,8 +339,8 @@ public class Application {
 
             AccountGetRequest req = new AccountGetRequest("female");            
 
-            AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity() {{
-                option1 = new AccountGetSecurityOption1("program", "transmit") {{
+            AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity(){{
+                option1 = new AccountGetSecurityOption1("program", "transmit"){{
                     apiKey = "";
                     oauth = "";
                 }};

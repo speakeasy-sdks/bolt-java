@@ -32,7 +32,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("Gloves") {{
+                .setSecurity(new Security("Gloves"){{
                     apiKey = "";
                 }})
                 .build();
@@ -80,7 +80,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("bypass") {{
+                .setSecurity(new Security("bypass"){{
                     apiKey = "";
                 }})
                 .build();
@@ -123,32 +123,32 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("mindshare") {{
+                .setSecurity(new Security("mindshare"){{
                     apiKey = "";
                 }})
                 .build();
 
-            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("Somoni",                 new CallbackUrls() {{
-                                accountPage = "https://www.example.com/account";
-                                baseDomain = "https://www.example.com/";
-                                confirmationRedirect = "https://www.example.com/bolt/redirect";
-                                createOrder = "https://www.example.com/bolt/order";
-                                debug = "https://www.example.com/bolt/debug";
-                                getAccount = "https://www.example.com/bolt/account";
-                                mobileAppDomain = "https://m.example.com/";
-                                oauthLogout = "https://www.example.com/bolt/logout";
-                                oauthRedirect = "https://www.example.com/bolt/oauth";
-                                privacyPolicy = "https://www.example.com/privacy-policy";
-                                productInfo = "https://www.example.com/bolt/product";
-                                remoteApi = "https://www.example.com/bolt/remote-api";
-                                shipping = "https://www.example.com/bolt/shipping";
-                                supportPage = "https://www.example.com/help";
-                                tax = "https://www.example.com/bolt/tax";
-                                termsOfService = "https://www.example.com/terms-of-service";
-                                universalMerchantApi = "https://www.example.com/bolt/merchant-api";
-                                updateCart = "https://www.example.com/bolt/cart";
-                                validateAdditionalAccountData = "https://www.example.com/bolt/validate-account";
-                            }};);            
+            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("Somoni", new CallbackUrls(){{
+accountPage = "https://www.example.com/account";
+baseDomain = "https://www.example.com/";
+confirmationRedirect = "https://www.example.com/bolt/redirect";
+createOrder = "https://www.example.com/bolt/order";
+debug = "https://www.example.com/bolt/debug";
+getAccount = "https://www.example.com/bolt/account";
+mobileAppDomain = "https://m.example.com/";
+oauthLogout = "https://www.example.com/bolt/logout";
+oauthRedirect = "https://www.example.com/bolt/oauth";
+privacyPolicy = "https://www.example.com/privacy-policy";
+productInfo = "https://www.example.com/bolt/product";
+remoteApi = "https://www.example.com/bolt/remote-api";
+shipping = "https://www.example.com/bolt/shipping";
+supportPage = "https://www.example.com/help";
+tax = "https://www.example.com/bolt/tax";
+termsOfService = "https://www.example.com/terms-of-service";
+universalMerchantApi = "https://www.example.com/bolt/merchant-api";
+updateCart = "https://www.example.com/bolt/cart";
+validateAdditionalAccountData = "https://www.example.com/bolt/validate-account";
+}});            
 
             MerchantCallbacksUpdateResponse res = sdk.configuration.updatemerchantCallback(req);
 

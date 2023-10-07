@@ -35,12 +35,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("decimal") {{
+                .setSecurity(new Security("decimal"){{
                     apiKey = "";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput req = new AccountTestCreationDataInput(OffsetDateTime.parse("2017-07-21T17:32:28Z"), AccountTestCreationDataEmailState.UNVERIFIED, AccountTestCreationDataPhoneState.VERIFIED) {{
+            com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput req = new AccountTestCreationDataInput(OffsetDateTime.parse("2017-07-21T17:32:28Z"), AccountTestCreationDataEmailState.UNVERIFIED, AccountTestCreationDataPhoneState.VERIFIED){{
                 hasAddress = true;
                 isMigrated = true;
             }};            
@@ -94,22 +94,22 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("hacking") {{
+                .setSecurity(new Security("hacking"){{
                     apiKey = "";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT,                 new com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails[]{{
-                                add(new ShipmentTrackingUpdateTrackingDetails() {{
-                                    countryCode = "US";
-                                    eventDate = "2014-08-21:T14:24:00Z";
-                                    locality = "San Francisco";
-                                    message = "Billing information received";
-                                    postalCode = "94105";
-                                    region = "CA";
-                                    status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
-                                }}),
-                            }}, "MockBolt-143292") {{
+            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT, new com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails[]{{
+    add(new ShipmentTrackingUpdateTrackingDetails(){{
+        countryCode = "US";
+        eventDate = "2014-08-21:T14:24:00Z";
+        locality = "San Francisco";
+        message = "Billing information received";
+        postalCode = "94105";
+        region = "CA";
+        status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
+    }}),
+}}, "MockBolt-143292"){{
                 deliveryDate = OffsetDateTime.parse("2014-08-23:T06:00:00Z");
             }};            
 
@@ -156,7 +156,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("South") {{
+                .setSecurity(new Security("South"){{
                     apiKey = "";
                 }})
                 .build();
