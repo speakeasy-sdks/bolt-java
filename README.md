@@ -14,7 +14,7 @@
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.11.0'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.12.0'
 ```
 <!-- End SDK Installation -->
 
@@ -38,7 +38,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("Sedan", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
+            AccountAddressCreateRequest req = new AccountAddressCreateRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
 company = "ACME Corporation";
 email = "alice@example.com";
 id = "D4g3h5tBuVYK9";
@@ -49,7 +49,7 @@ streetAddress2 = "c/o Shipping Department";
 }});            
 
             AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(){{
-                option1 = new AccountAddressCreateSecurityOption1("F2M", "placeat"){{
+                option1 = new AccountAddressCreateSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};

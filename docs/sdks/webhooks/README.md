@@ -35,12 +35,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("online"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput("Configuration", "https://www.example.com/webhook");            
+            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput("string", "https://www.example.com/webhook");            
 
             WebhooksCreateResponse res = sdk.webhooks.create(req);
 
@@ -84,7 +84,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("program"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
@@ -133,7 +133,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("female"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
@@ -182,12 +182,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("UDP"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            WebhooksGetAllRequest req = new WebhooksGetAllRequest("and");            
+            WebhooksGetAllRequest req = new WebhooksGetAllRequest("string");            
 
             WebhooksGetAllResponse res = sdk.webhooks.getAll(req);
 

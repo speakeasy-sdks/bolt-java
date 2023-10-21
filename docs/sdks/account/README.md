@@ -40,7 +40,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("Sedan", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
+            AccountAddressCreateRequest req = new AccountAddressCreateRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
 company = "ACME Corporation";
 email = "alice@example.com";
 id = "D4g3h5tBuVYK9";
@@ -51,7 +51,7 @@ streetAddress2 = "c/o Shipping Department";
 }});            
 
             AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(){{
-                option1 = new AccountAddressCreateSecurityOption1("F2M", "placeat"){{
+                option1 = new AccountAddressCreateSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -107,10 +107,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("Data", "payment");            
+            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("string", "string");            
 
             AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity(){{
-                option1 = new AccountAddPaymentMethodSecurityOption1("violet", "Gasoline"){{
+                option1 = new AccountAddPaymentMethodSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -164,10 +164,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("candela", "D4g3h5tBuVYK9");            
+            AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("string", "D4g3h5tBuVYK9");            
 
             AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity(){{
-                option1 = new AccountAddressDeleteSecurityOption1("Rial", "Configurable"){{
+                option1 = new AccountAddressDeleteSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -223,7 +223,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountAddressEditRequest req = new AccountAddressEditRequest("Customer", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
+            AccountAddressEditRequest req = new AccountAddressEditRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
 company = "ACME Corporation";
 email = "alice@example.com";
 id = "D4g3h5tBuVYK9";
@@ -234,7 +234,7 @@ streetAddress2 = "c/o Shipping Department";
 }}, "D4g3h5tBuVYK9");            
 
             AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity(){{
-                option1 = new AccountAddressEditSecurityOption1("Investor", "Demiflux"){{
+                option1 = new AccountAddressEditSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};
@@ -283,12 +283,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("Keyboard"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            AccountExistsRequest req = new AccountExistsRequest("Producer", new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"));            
+            AccountExistsRequest req = new AccountExistsRequest("string", new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"));            
 
             AccountExistsResponse res = sdk.account.exists(req);
 
@@ -337,10 +337,10 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            AccountGetRequest req = new AccountGetRequest("female");            
+            AccountGetRequest req = new AccountGetRequest("string");            
 
             AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity(){{
-                option1 = new AccountGetSecurityOption1("program", "transmit"){{
+                option1 = new AccountGetSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};

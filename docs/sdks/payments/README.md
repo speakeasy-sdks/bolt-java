@@ -38,12 +38,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("Shirt"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("Grocery", new GuestPaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
+            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("string", new GuestPaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
 tax = 900L;
 }}, "order_100"){{
 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -74,7 +74,7 @@ items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
 orderDescription = "Order #1234567890";
 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
     add(new CartShipment(){{
-        address = "networks";
+        address = "string";
         carrier = "FedEx";
         cost = new Amounts("USD", 900L){{
             currency = "USD";
@@ -83,7 +83,7 @@ shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
         }};
     }}),
 }};
-}}, "cum"));            
+}}, "string"));            
 
             GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req);
 
@@ -140,7 +140,7 @@ public class Application {
             BoltEmbed sdk = BoltEmbed.builder()
                 .build();
 
-            PaymentsInitializeRequest req = new PaymentsInitializeRequest("Dam", new PaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
+            PaymentsInitializeRequest req = new PaymentsInitializeRequest("string", new PaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
 tax = 900L;
 }}, "order_100"){{
 discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
@@ -171,7 +171,7 @@ items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
 orderDescription = "Order #1234567890";
 shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
     add(new CartShipment(){{
-        address = "across";
+        address = "string";
         carrier = "FedEx";
         cost = new Amounts("USD", 900L){{
             currency = "USD";
@@ -180,10 +180,10 @@ shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
         }};
     }}),
 }};
-}}, "second"));            
+}}, "string"));            
 
             PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity(){{
-                option1 = new PaymentsInitializeSecurityOption1("invoice", "primary"){{
+                option1 = new PaymentsInitializeSecurityOption1("string", "string"){{
                     apiKey = "";
                     oauth = "";
                 }};

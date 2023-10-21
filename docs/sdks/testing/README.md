@@ -35,7 +35,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("decimal"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
@@ -94,7 +94,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("hacking"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
@@ -156,7 +156,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("South"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();

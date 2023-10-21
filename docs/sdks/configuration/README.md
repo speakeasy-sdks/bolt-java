@@ -32,12 +32,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("Gloves"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            MerchantCallbacksGetRequest req = new MerchantCallbacksGetRequest("Fantastic");            
+            MerchantCallbacksGetRequest req = new MerchantCallbacksGetRequest("string");            
 
             MerchantCallbacksGetResponse res = sdk.configuration.getmerchantCallback(req);
 
@@ -80,7 +80,7 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("bypass"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
@@ -123,12 +123,12 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("mindshare"){{
+                .setSecurity(new Security("string"){{
                     apiKey = "";
                 }})
                 .build();
 
-            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("Somoni", new CallbackUrls(){{
+            MerchantCallbacksUpdateRequest req = new MerchantCallbacksUpdateRequest("string", new CallbackUrls(){{
 accountPage = "https://www.example.com/account";
 baseDomain = "https://www.example.com/";
 confirmationRedirect = "https://www.example.com/bolt/redirect";
