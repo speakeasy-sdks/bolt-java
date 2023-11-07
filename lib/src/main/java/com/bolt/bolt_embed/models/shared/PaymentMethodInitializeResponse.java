@@ -12,9 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class PaymentMethodInitializeResponse {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("action")
-    public PaymentMethodInitializeResponseAction action;
+    public Action action;
 
-    public PaymentMethodInitializeResponse withAction(PaymentMethodInitializeResponseAction action) {
+    public PaymentMethodInitializeResponse withAction(Action action) {
         this.action = action;
         return this;
     }
@@ -30,9 +30,9 @@ public class PaymentMethodInitializeResponse {
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
-    public PaymentMethodInitializeResponseStatus status;
+    public Status status;
 
-    public PaymentMethodInitializeResponse withStatus(PaymentMethodInitializeResponseStatus status) {
+    public PaymentMethodInitializeResponse withStatus(Status status) {
         this.status = status;
         return this;
     }

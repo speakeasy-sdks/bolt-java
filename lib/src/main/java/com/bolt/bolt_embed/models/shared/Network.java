@@ -7,9 +7,9 @@ package com.bolt.bolt_embed.models.shared;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * CreditCardNetwork - The credit card network.
+ * Network - The credit card network.
  */
-public enum CreditCardNetwork {
+public enum Network {
     VISA("visa"),
     MASTERCARD("mastercard"),
     AMEX("amex"),
@@ -22,7 +22,7 @@ public enum CreditCardNetwork {
     @JsonValue
     public final String value;
 
-    private CreditCardNetwork(String value) {
+    private Network(String value) {
         this.value = value;
     }
 }

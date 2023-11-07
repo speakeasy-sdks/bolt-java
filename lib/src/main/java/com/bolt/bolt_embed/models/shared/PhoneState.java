@@ -6,17 +6,15 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/**
- * IdentifierIdentifierType - The type of identifier
- */
-public enum IdentifierIdentifierType {
-    EMAIL("email"),
-    EMAIL_SHA256("email_sha256");
+public enum PhoneState {
+    MISSING("missing"),
+    UNVERIFIED("unverified"),
+    VERIFIED("verified");
 
     @JsonValue
     public final String value;
 
-    private IdentifierIdentifierType(String value) {
+    private PhoneState(String value) {
         this.value = value;
     }
 }

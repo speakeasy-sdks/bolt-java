@@ -44,9 +44,9 @@ public class ShipmentTrackingUpdate {
      * A list of tracking updates that contain the shipment's status, location, and any unique messages.
      */
     @JsonProperty("tracking_details")
-    public ShipmentTrackingUpdateTrackingDetails[] trackingDetails;
+    public TrackingDetails[] trackingDetails;
 
-    public ShipmentTrackingUpdate withTrackingDetails(ShipmentTrackingUpdateTrackingDetails[] trackingDetails) {
+    public ShipmentTrackingUpdate withTrackingDetails(TrackingDetails[] trackingDetails) {
         this.trackingDetails = trackingDetails;
         return this;
     }
@@ -62,7 +62,7 @@ public class ShipmentTrackingUpdate {
         return this;
     }
     
-    public ShipmentTrackingUpdate(@JsonProperty("status") ShipmentTrackingUpdateStatus status, @JsonProperty("tracking_details") ShipmentTrackingUpdateTrackingDetails[] trackingDetails, @JsonProperty("tracking_number") String trackingNumber) {
+    public ShipmentTrackingUpdate(@JsonProperty("status") ShipmentTrackingUpdateStatus status, @JsonProperty("tracking_details") TrackingDetails[] trackingDetails, @JsonProperty("tracking_number") String trackingNumber) {
         this.status = status;
         this.trackingDetails = trackingDetails;
         this.trackingNumber = trackingNumber;

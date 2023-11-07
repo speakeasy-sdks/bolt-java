@@ -66,7 +66,7 @@ public class Account {
 
         com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse(contentType, httpRes.statusCode()) {{
             addressListing = null;
-            accountAddressCreate400ApplicationJSONOneOf = null;
+            oneOf = null;
         }};
         res.rawResponse = httpRes;
         
@@ -81,7 +81,7 @@ public class Account {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
                 ObjectMapper mapper = JSON.getMapper();
                 Object out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), Object.class);
-                res.accountAddressCreate400ApplicationJSONOneOf = out;
+                res.oneOf = out;
             }
         }
 
@@ -242,7 +242,7 @@ public class Account {
 
         com.bolt.bolt_embed.models.operations.AccountAddressEditResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressEditResponse(contentType, httpRes.statusCode()) {{
             addressListing = null;
-            accountAddressEdit400ApplicationJSONOneOf = null;
+            oneOf = null;
         }};
         res.rawResponse = httpRes;
         
@@ -257,7 +257,7 @@ public class Account {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
                 ObjectMapper mapper = JSON.getMapper();
                 Object out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), Object.class);
-                res.accountAddressEdit400ApplicationJSONOneOf = out;
+                res.oneOf = out;
             }
         }
 

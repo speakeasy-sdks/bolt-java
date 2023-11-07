@@ -6,7 +6,7 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum ShipmentTrackingUpdateTrackingDetailsStatus {
+public enum ShipmentTrackingUpdateSchemasStatus {
     UNKNOWN("unknown"),
     PRE_TRANSIT("pre_transit"),
     IN_TRANSIT("in_transit"),
@@ -21,7 +21,7 @@ public enum ShipmentTrackingUpdateTrackingDetailsStatus {
     @JsonValue
     public final String value;
 
-    private ShipmentTrackingUpdateTrackingDetailsStatus(String value) {
+    private ShipmentTrackingUpdateSchemasStatus(String value) {
         this.value = value;
     }
 }

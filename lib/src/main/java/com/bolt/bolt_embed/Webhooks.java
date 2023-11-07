@@ -195,15 +195,15 @@ public class Webhooks {
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse res = new com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse(contentType, httpRes.statusCode()) {{
-            webhooksGetAll200ApplicationJSONObject = null;
+            object = null;
         }};
         res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
                 ObjectMapper mapper = JSON.getMapper();
-                com.bolt.bolt_embed.models.operations.WebhooksGetAll200ApplicationJSON out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), com.bolt.bolt_embed.models.operations.WebhooksGetAll200ApplicationJSON.class);
-                res.webhooksGetAll200ApplicationJSONObject = out;
+                com.bolt.bolt_embed.models.operations.WebhooksGetAllResponseBody out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), com.bolt.bolt_embed.models.operations.WebhooksGetAllResponseBody.class);
+                res.object = out;
             }
         }
 

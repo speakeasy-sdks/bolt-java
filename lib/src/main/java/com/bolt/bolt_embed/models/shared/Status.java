@@ -6,7 +6,7 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum PaymentMethodInitializeResponseStatus {
+public enum Status {
     AWAITING_USER_CONFIRMATION("awaiting_user_confirmation"),
     PAYMENT_READY("payment_ready"),
     UPDATE_PAYMENT_METHOD("update_payment_method"),
@@ -15,7 +15,7 @@ public enum PaymentMethodInitializeResponseStatus {
     @JsonValue
     public final String value;
 
-    private PaymentMethodInitializeResponseStatus(String value) {
+    private Status(String value) {
         this.value = value;
     }
 }

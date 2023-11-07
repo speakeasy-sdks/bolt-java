@@ -46,10 +46,10 @@ public class WebhooksGetAllResponse {
      * All existing webhook information has been retrieved
      */
     
-    public WebhooksGetAll200ApplicationJSON webhooksGetAll200ApplicationJSONObject;
+    public WebhooksGetAllResponseBody object;
 
-    public WebhooksGetAllResponse withWebhooksGetAll200ApplicationJSONObject(WebhooksGetAll200ApplicationJSON webhooksGetAll200ApplicationJSONObject) {
-        this.webhooksGetAll200ApplicationJSONObject = webhooksGetAll200ApplicationJSONObject;
+    public WebhooksGetAllResponse withObject(WebhooksGetAllResponseBody object) {
+        this.object = object;
         return this;
     }
     

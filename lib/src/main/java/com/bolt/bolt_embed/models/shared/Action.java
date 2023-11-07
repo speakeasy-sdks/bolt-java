@@ -9,21 +9,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class PaymentMethodInitializeResponseAction {
+public class Action {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("method")
-    public PaymentMethodInitializeResponseActionMethod method;
+    public Method method;
 
-    public PaymentMethodInitializeResponseAction withMethod(PaymentMethodInitializeResponseActionMethod method) {
+    public Action withMethod(Method method) {
         this.method = method;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("type")
-    public PaymentMethodInitializeResponseActionType type;
+    public Type type;
 
-    public PaymentMethodInitializeResponseAction withType(PaymentMethodInitializeResponseActionType type) {
+    public Action withType(Type type) {
         this.type = type;
         return this;
     }
@@ -32,10 +32,10 @@ public class PaymentMethodInitializeResponseAction {
     @JsonProperty("url")
     public String url;
 
-    public PaymentMethodInitializeResponseAction withUrl(String url) {
+    public Action withUrl(String url) {
         this.url = url;
         return this;
     }
     
-    public PaymentMethodInitializeResponseAction(){}
+    public Action(){}
 }

@@ -34,7 +34,7 @@ public class Testing {
      * @return the response from the API call
      * @throws Exception if the API call fails
      */
-    public com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse createAccount(com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput request) throws Exception {
+    public com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse createAccount(com.bolt.bolt_embed.models.shared.AccountTestCreationData request) throws Exception {
         String baseUrl = com.bolt.bolt_embed.utils.Utils.templateUrl(this.sdkConfiguration.serverUrl, this.sdkConfiguration.getServerVariableDefaults());
         String url = com.bolt.bolt_embed.utils.Utils.generateURL(baseUrl, "/testing/accounts");
         

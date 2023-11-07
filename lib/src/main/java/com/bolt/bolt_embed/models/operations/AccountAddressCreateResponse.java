@@ -43,17 +43,6 @@ public class AccountAddressCreateResponse {
     }
     
     /**
-     * The address is invalid and cannot be added
-     */
-    
-    public Object accountAddressCreate400ApplicationJSONOneOf;
-
-    public AccountAddressCreateResponse withAccountAddressCreate400ApplicationJSONOneOf(Object accountAddressCreate400ApplicationJSONOneOf) {
-        this.accountAddressCreate400ApplicationJSONOneOf = accountAddressCreate400ApplicationJSONOneOf;
-        return this;
-    }
-    
-    /**
      * The address was successfully added
      */
     
@@ -61,6 +50,17 @@ public class AccountAddressCreateResponse {
 
     public AccountAddressCreateResponse withAddressListing(com.bolt.bolt_embed.models.shared.AddressListing addressListing) {
         this.addressListing = addressListing;
+        return this;
+    }
+    
+    /**
+     * The address is invalid and cannot be added
+     */
+    
+    public Object oneOf;
+
+    public AccountAddressCreateResponse withOneOf(Object oneOf) {
+        this.oneOf = oneOf;
         return this;
     }
     

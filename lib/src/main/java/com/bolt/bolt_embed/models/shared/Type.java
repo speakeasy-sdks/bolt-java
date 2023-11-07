@@ -6,14 +6,14 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum PaymentMethodInitializeResponseActionType {
+public enum Type {
     REDIRECT("redirect"),
     FINALIZE("finalize");
 
     @JsonValue
     public final String value;
 
-    private PaymentMethodInitializeResponseActionType(String value) {
+    private Type(String value) {
         this.value = value;
     }
 }

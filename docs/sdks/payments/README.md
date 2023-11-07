@@ -1,5 +1,5 @@
 # Payments
-(*payments*)
+(*.payments*)
 
 ## Overview
 

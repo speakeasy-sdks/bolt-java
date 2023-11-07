@@ -1,5 +1,5 @@
 # Webhooks
-(*webhooks*)
+(*.webhooks*)
 
 ## Overview
 
@@ -191,7 +191,7 @@ public class Application {
 
             WebhooksGetAllResponse res = sdk.webhooks.getAll(req);
 
-            if (res.webhooksGetAll200ApplicationJSONObject != null) {
+            if (res.object != null) {
                 // handle response
             }
         } catch (Exception e) {

@@ -45,9 +45,9 @@ public class CreditCard {
      * The credit card network.
      */
     @JsonProperty("network")
-    public CreditCardNetwork network;
+    public Network network;
 
-    public CreditCard withNetwork(CreditCardNetwork network) {
+    public CreditCard withNetwork(Network network) {
         this.network = network;
         return this;
     }
@@ -63,7 +63,7 @@ public class CreditCard {
         return this;
     }
     
-    public CreditCard(@JsonProperty("bin") String bin, @JsonProperty("expiration") String expiration, @JsonProperty("last4") String last4, @JsonProperty("network") CreditCardNetwork network, @JsonProperty("token") String token) {
+    public CreditCard(@JsonProperty("bin") String bin, @JsonProperty("expiration") String expiration, @JsonProperty("last4") String last4, @JsonProperty("network") Network network, @JsonProperty("token") String token) {
         this.bin = bin;
         this.expiration = expiration;
         this.last4 = last4;

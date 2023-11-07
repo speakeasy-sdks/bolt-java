@@ -9,18 +9,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * WebhooksGetAll200ApplicationJSON - All existing webhook information has been retrieved
+ * WebhooksGetAllResponseBody - All existing webhook information has been retrieved
  */
 
-public class WebhooksGetAll200ApplicationJSON {
+public class WebhooksGetAllResponseBody {
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("webhooks")
     public com.bolt.bolt_embed.models.shared.Webhook[] webhooks;
 
-    public WebhooksGetAll200ApplicationJSON withWebhooks(com.bolt.bolt_embed.models.shared.Webhook[] webhooks) {
+    public WebhooksGetAllResponseBody withWebhooks(com.bolt.bolt_embed.models.shared.Webhook[] webhooks) {
         this.webhooks = webhooks;
         return this;
     }
     
-    public WebhooksGetAll200ApplicationJSON(){}
+    public WebhooksGetAllResponseBody(){}
 }

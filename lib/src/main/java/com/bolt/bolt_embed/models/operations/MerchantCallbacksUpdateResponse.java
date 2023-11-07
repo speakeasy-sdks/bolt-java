@@ -57,10 +57,10 @@ public class MerchantCallbacksUpdateResponse {
      * The URL is invalid and cannot be set
      */
     
-    public Object merchantCallbacksUpdate400ApplicationJSONOneOf;
+    public Object oneOf;
 
-    public MerchantCallbacksUpdateResponse withMerchantCallbacksUpdate400ApplicationJSONOneOf(Object merchantCallbacksUpdate400ApplicationJSONOneOf) {
-        this.merchantCallbacksUpdate400ApplicationJSONOneOf = merchantCallbacksUpdate400ApplicationJSONOneOf;
+    public MerchantCallbacksUpdateResponse withOneOf(Object oneOf) {
+        this.oneOf = oneOf;
         return this;
     }
     

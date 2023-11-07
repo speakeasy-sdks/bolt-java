@@ -32,9 +32,9 @@ public class AccountTestCreationDataOutput {
     }
     
     @JsonProperty("email_state")
-    public AccountTestCreationDataEmailState emailState;
+    public EmailState emailState;
 
-    public AccountTestCreationDataOutput withEmailState(AccountTestCreationDataEmailState emailState) {
+    public AccountTestCreationDataOutput withEmailState(EmailState emailState) {
         this.emailState = emailState;
         return this;
     }
@@ -64,14 +64,14 @@ public class AccountTestCreationDataOutput {
     }
     
     @JsonProperty("phone_state")
-    public AccountTestCreationDataPhoneState phoneState;
+    public PhoneState phoneState;
 
-    public AccountTestCreationDataOutput withPhoneState(AccountTestCreationDataPhoneState phoneState) {
+    public AccountTestCreationDataOutput withPhoneState(PhoneState phoneState) {
         this.phoneState = phoneState;
         return this;
     }
     
-    public AccountTestCreationDataOutput(@JsonProperty("deactivate_at") OffsetDateTime deactivateAt, @JsonProperty("email") String email, @JsonProperty("email_state") AccountTestCreationDataEmailState emailState, @JsonProperty("oauth_code") String oauthCode, @JsonProperty("otp_code") String otpCode, @JsonProperty("phone") String phone, @JsonProperty("phone_state") AccountTestCreationDataPhoneState phoneState) {
+    public AccountTestCreationDataOutput(@JsonProperty("deactivate_at") OffsetDateTime deactivateAt, @JsonProperty("email") String email, @JsonProperty("email_state") EmailState emailState, @JsonProperty("oauth_code") String oauthCode, @JsonProperty("otp_code") String otpCode, @JsonProperty("phone") String phone, @JsonProperty("phone_state") PhoneState phoneState) {
         this.deactivateAt = deactivateAt;
         this.email = email;
         this.emailState = emailState;

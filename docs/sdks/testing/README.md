@@ -1,5 +1,5 @@
 # Testing
-(*testing*)
+(*.testing*)
 
 ## Overview
 
@@ -25,9 +25,9 @@ package hello.world;
 
 import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse;
-import com.bolt.bolt_embed.models.shared.AccountTestCreationDataEmailState;
-import com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput;
-import com.bolt.bolt_embed.models.shared.AccountTestCreationDataPhoneState;
+import com.bolt.bolt_embed.models.shared.AccountTestCreationData;
+import com.bolt.bolt_embed.models.shared.EmailState;
+import com.bolt.bolt_embed.models.shared.PhoneState;
 import com.bolt.bolt_embed.models.shared.Security;
 import java.time.OffsetDateTime;
 
@@ -40,7 +40,7 @@ public class Application {
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput req = new AccountTestCreationDataInput(OffsetDateTime.parse("2017-07-21T17:32:28Z"), AccountTestCreationDataEmailState.UNVERIFIED, AccountTestCreationDataPhoneState.VERIFIED){{
+            com.bolt.bolt_embed.models.shared.AccountTestCreationData req = new AccountTestCreationData(OffsetDateTime.parse("2017-07-21T17:32:28Z"), EmailState.UNVERIFIED, PhoneState.VERIFIED){{
                 hasAddress = true;
                 isMigrated = true;
             }};            
@@ -59,9 +59,9 @@ public class Application {
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [com.bolt.bolt_embed.models.shared.AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md) | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                   | [com.bolt.bolt_embed.models.shared.AccountTestCreationData](../../models/shared/AccountTestCreationData.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
 
 
 ### Response
@@ -85,9 +85,9 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse;
 import com.bolt.bolt_embed.models.shared.Security;
 import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate;
+import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateSchemasStatus;
 import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateStatus;
-import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails;
-import com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetailsStatus;
+import com.bolt.bolt_embed.models.shared.TrackingDetails;
 import java.time.OffsetDateTime;
 
 public class Application {
@@ -99,15 +99,15 @@ public class Application {
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT, new com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdateTrackingDetails[]{{
-    add(new ShipmentTrackingUpdateTrackingDetails(){{
+            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT, new com.bolt.bolt_embed.models.shared.TrackingDetails[]{{
+    add(new TrackingDetails(){{
         countryCode = "US";
         eventDate = "2014-08-21:T14:24:00Z";
         locality = "San Francisco";
         message = "Billing information received";
         postalCode = "94105";
         region = "CA";
-        status = ShipmentTrackingUpdateTrackingDetailsStatus.PRE_TRANSIT;
+        status = ShipmentTrackingUpdateSchemasStatus.PRE_TRANSIT;
     }}),
 }}, "MockBolt-143292"){{
                 deliveryDate = OffsetDateTime.parse("2014-08-23:T06:00:00Z");

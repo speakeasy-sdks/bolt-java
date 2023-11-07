@@ -6,15 +6,14 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AccountTestCreationDataPhoneState {
-    MISSING("missing"),
-    UNVERIFIED("unverified"),
-    VERIFIED("verified");
+public enum Method {
+    GET("GET"),
+    POST("POST");
 
     @JsonValue
     public final String value;
 
-    private AccountTestCreationDataPhoneState(String value) {
+    private Method(String value) {
         this.value = value;
     }
 }

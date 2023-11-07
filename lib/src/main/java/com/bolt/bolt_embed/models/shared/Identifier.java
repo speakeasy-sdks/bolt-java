@@ -13,9 +13,9 @@ public class Identifier {
      * The type of identifier
      */
     @SpeakeasyMetadata("queryParam:name=identifier_type")
-    public IdentifierIdentifierType identifierType;
+    public IdentifierType identifierType;
 
-    public Identifier withIdentifierType(IdentifierIdentifierType identifierType) {
+    public Identifier withIdentifierType(IdentifierType identifierType) {
         this.identifierType = identifierType;
         return this;
     }
@@ -31,7 +31,7 @@ public class Identifier {
         return this;
     }
     
-    public Identifier(@JsonProperty("identifier_type") IdentifierIdentifierType identifierType, @JsonProperty("identifier_value") String identifierValue) {
+    public Identifier(@JsonProperty("identifier_type") IdentifierType identifierType, @JsonProperty("identifier_value") String identifierValue) {
         this.identifierType = identifierType;
         this.identifierValue = identifierValue;
   }

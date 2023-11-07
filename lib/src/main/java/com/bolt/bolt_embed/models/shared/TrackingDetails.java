@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class ShipmentTrackingUpdateTrackingDetails {
+public class TrackingDetails {
     /**
      * The country associated this this set of tracking details, if any.
      */
@@ -17,7 +17,7 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("country_code")
     public String countryCode;
 
-    public ShipmentTrackingUpdateTrackingDetails withCountryCode(String countryCode) {
+    public TrackingDetails withCountryCode(String countryCode) {
         this.countryCode = countryCode;
         return this;
     }
@@ -29,7 +29,7 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("event_date")
     public String eventDate;
 
-    public ShipmentTrackingUpdateTrackingDetails withEventDate(String eventDate) {
+    public TrackingDetails withEventDate(String eventDate) {
         this.eventDate = eventDate;
         return this;
     }
@@ -41,7 +41,7 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("locality")
     public String locality;
 
-    public ShipmentTrackingUpdateTrackingDetails withLocality(String locality) {
+    public TrackingDetails withLocality(String locality) {
         this.locality = locality;
         return this;
     }
@@ -53,7 +53,7 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("message")
     public String message;
 
-    public ShipmentTrackingUpdateTrackingDetails withMessage(String message) {
+    public TrackingDetails withMessage(String message) {
         this.message = message;
         return this;
     }
@@ -65,7 +65,7 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("postal_code")
     public String postalCode;
 
-    public ShipmentTrackingUpdateTrackingDetails withPostalCode(String postalCode) {
+    public TrackingDetails withPostalCode(String postalCode) {
         this.postalCode = postalCode;
         return this;
     }
@@ -77,19 +77,19 @@ public class ShipmentTrackingUpdateTrackingDetails {
     @JsonProperty("region")
     public String region;
 
-    public ShipmentTrackingUpdateTrackingDetails withRegion(String region) {
+    public TrackingDetails withRegion(String region) {
         this.region = region;
         return this;
     }
     
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("status")
-    public ShipmentTrackingUpdateTrackingDetailsStatus status;
+    public ShipmentTrackingUpdateSchemasStatus status;
 
-    public ShipmentTrackingUpdateTrackingDetails withStatus(ShipmentTrackingUpdateTrackingDetailsStatus status) {
+    public TrackingDetails withStatus(ShipmentTrackingUpdateSchemasStatus status) {
         this.status = status;
         return this;
     }
     
-    public ShipmentTrackingUpdateTrackingDetails(){}
+    public TrackingDetails(){}
 }

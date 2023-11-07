@@ -1,5 +1,5 @@
 # Account
-(*account*)
+(*.account*)
 
 ## Overview
 
@@ -276,7 +276,7 @@ import com.bolt.bolt_embed.BoltEmbed;
 import com.bolt.bolt_embed.models.operations.AccountExistsRequest;
 import com.bolt.bolt_embed.models.operations.AccountExistsResponse;
 import com.bolt.bolt_embed.models.shared.Identifier;
-import com.bolt.bolt_embed.models.shared.IdentifierIdentifierType;
+import com.bolt.bolt_embed.models.shared.IdentifierType;
 import com.bolt.bolt_embed.models.shared.Security;
 
 public class Application {
@@ -288,7 +288,7 @@ public class Application {
                 }})
                 .build();
 
-            AccountExistsRequest req = new AccountExistsRequest("string", new Identifier(IdentifierIdentifierType.EMAIL, "alice@example.com"));            
+            AccountExistsRequest req = new AccountExistsRequest("string", new Identifier(IdentifierType.EMAIL, "alice@example.com"));            
 
             AccountExistsResponse res = sdk.account.exists(req);
 

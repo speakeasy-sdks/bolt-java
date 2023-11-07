@@ -6,7 +6,7 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum AccountTestCreationDataEmailState {
+public enum EmailState {
     MISSING("missing"),
     UNVERIFIED("unverified"),
     VERIFIED("verified");
@@ -14,7 +14,7 @@ public enum AccountTestCreationDataEmailState {
     @JsonValue
     public final String value;
 
-    private AccountTestCreationDataEmailState(String value) {
+    private EmailState(String value) {
         this.value = value;
     }
 }

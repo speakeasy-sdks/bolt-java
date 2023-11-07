@@ -9,9 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Identifiers {
     @JsonProperty("merchant_divisions")
-    public IdentifiersMerchantDivisions[] merchantDivisions;
+    public MerchantDivisions[] merchantDivisions;
 
-    public Identifiers withMerchantDivisions(IdentifiersMerchantDivisions[] merchantDivisions) {
+    public Identifiers withMerchantDivisions(MerchantDivisions[] merchantDivisions) {
         this.merchantDivisions = merchantDivisions;
         return this;
     }
@@ -32,7 +32,7 @@ public class Identifiers {
         return this;
     }
     
-    public Identifiers(@JsonProperty("merchant_divisions") IdentifiersMerchantDivisions[] merchantDivisions, @JsonProperty("merchant_id") String merchantId, @JsonProperty("signing_secret") String signingSecret) {
+    public Identifiers(@JsonProperty("merchant_divisions") MerchantDivisions[] merchantDivisions, @JsonProperty("merchant_id") String merchantId, @JsonProperty("signing_secret") String signingSecret) {
         this.merchantDivisions = merchantDivisions;
         this.merchantId = merchantId;
         this.signingSecret = signingSecret;

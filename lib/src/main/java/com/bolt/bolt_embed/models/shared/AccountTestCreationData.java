@@ -14,21 +14,21 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.OffsetDateTime;
 
 
-public class AccountTestCreationDataInput {
+public class AccountTestCreationData {
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("deactivate_at")
     public OffsetDateTime deactivateAt;
 
-    public AccountTestCreationDataInput withDeactivateAt(OffsetDateTime deactivateAt) {
+    public AccountTestCreationData withDeactivateAt(OffsetDateTime deactivateAt) {
         this.deactivateAt = deactivateAt;
         return this;
     }
     
     @JsonProperty("email_state")
-    public AccountTestCreationDataEmailState emailState;
+    public EmailState emailState;
 
-    public AccountTestCreationDataInput withEmailState(AccountTestCreationDataEmailState emailState) {
+    public AccountTestCreationData withEmailState(EmailState emailState) {
         this.emailState = emailState;
         return this;
     }
@@ -37,7 +37,7 @@ public class AccountTestCreationDataInput {
     @JsonProperty("has_address")
     public Boolean hasAddress;
 
-    public AccountTestCreationDataInput withHasAddress(Boolean hasAddress) {
+    public AccountTestCreationData withHasAddress(Boolean hasAddress) {
         this.hasAddress = hasAddress;
         return this;
     }
@@ -46,20 +46,20 @@ public class AccountTestCreationDataInput {
     @JsonProperty("is_migrated")
     public Boolean isMigrated;
 
-    public AccountTestCreationDataInput withIsMigrated(Boolean isMigrated) {
+    public AccountTestCreationData withIsMigrated(Boolean isMigrated) {
         this.isMigrated = isMigrated;
         return this;
     }
     
     @JsonProperty("phone_state")
-    public AccountTestCreationDataPhoneState phoneState;
+    public PhoneState phoneState;
 
-    public AccountTestCreationDataInput withPhoneState(AccountTestCreationDataPhoneState phoneState) {
+    public AccountTestCreationData withPhoneState(PhoneState phoneState) {
         this.phoneState = phoneState;
         return this;
     }
     
-    public AccountTestCreationDataInput(@JsonProperty("deactivate_at") OffsetDateTime deactivateAt, @JsonProperty("email_state") AccountTestCreationDataEmailState emailState, @JsonProperty("phone_state") AccountTestCreationDataPhoneState phoneState) {
+    public AccountTestCreationData(@JsonProperty("deactivate_at") OffsetDateTime deactivateAt, @JsonProperty("email_state") EmailState emailState, @JsonProperty("phone_state") PhoneState phoneState) {
         this.deactivateAt = deactivateAt;
         this.emailState = emailState;
         this.phoneState = phoneState;

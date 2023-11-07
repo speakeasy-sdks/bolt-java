@@ -6,14 +6,17 @@ package com.bolt.bolt_embed.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum PaymentMethodInitializeResponseActionMethod {
-    GET("GET"),
-    POST("POST");
+/**
+ * IdentifierType - The type of identifier
+ */
+public enum IdentifierType {
+    EMAIL("email"),
+    EMAIL_SHA256("email_sha256");
 
     @JsonValue
     public final String value;
 
-    private PaymentMethodInitializeResponseActionMethod(String value) {
+    private IdentifierType(String value) {
         this.value = value;
     }
 }
