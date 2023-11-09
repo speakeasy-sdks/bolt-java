@@ -1,5 +1,5 @@
 # Account
-(*.account*)
+(*account*)
 
 ## Overview
 

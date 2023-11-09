@@ -107,8 +107,8 @@ lib/src/main/java/com/bolt/bolt_embed/models/shared/MerchantDivisions.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/Identifiers.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/EmailState.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/PhoneState.java
-lib/src/main/java/com/bolt/bolt_embed/models/shared/AccountTestCreationData.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/AccountTestCreationDataOutput.java
+lib/src/main/java/com/bolt/bolt_embed/models/shared/AccountTestCreationData.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/ShipmentTrackingUpdateStatus.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/ShipmentTrackingUpdateSchemasStatus.java
 lib/src/main/java/com/bolt/bolt_embed/models/shared/TrackingDetails.java
@@ -194,8 +194,8 @@ docs/models/shared/MerchantDivisions.md
 docs/models/shared/Identifiers.md
 docs/models/shared/EmailState.md
 docs/models/shared/PhoneState.md
-docs/models/shared/AccountTestCreationData.md
 docs/models/shared/AccountTestCreationDataOutput.md
+docs/models/shared/AccountTestCreationData.md
 docs/models/shared/ShipmentTrackingUpdateStatus.md
 docs/models/shared/ShipmentTrackingUpdateSchemasStatus.md
 docs/models/shared/TrackingDetails.md

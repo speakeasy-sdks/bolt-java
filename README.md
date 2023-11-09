@@ -14,7 +14,7 @@
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.13.0'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.14.0'
 ```
 <!-- End SDK Installation -->
 
@@ -70,7 +70,7 @@ streetAddress2 = "c/o Shipping Department";
 ## Available Resources and Operations
 
 
-### [.account](docs/sdks/account/README.md)
+### [account](docs/sdks/account/README.md)
 
 * [addAddress](docs/sdks/account/README.md#addaddress) - Add an address
 * [addPaymentMethod](docs/sdks/account/README.md#addpaymentmethod) - Add a payment method to a shopper's Bolt account Wallet.
@@ -79,24 +79,24 @@ streetAddress2 = "c/o Shipping Department";
 * [exists](docs/sdks/account/README.md#exists) - Determine the existence of a Bolt account
 * [get](docs/sdks/account/README.md#get) - Retrieve account details
 
-### [.payments](docs/sdks/payments/README.md)
+### [payments](docs/sdks/payments/README.md)
 
 * [initializeGuestPayment](docs/sdks/payments/README.md#initializeguestpayment) - Initialize a Bolt payment for guest shoppers
 * [initializeLoggedInPayment](docs/sdks/payments/README.md#initializeloggedinpayment) - Initialize a Bolt payment for logged in shoppers
 
-### [.configuration](docs/sdks/configuration/README.md)
+### [configuration](docs/sdks/configuration/README.md)
 
 * [getmerchantCallback](docs/sdks/configuration/README.md#getmerchantcallback) - Retrieve callback URLs for the merchant
 * [getmerchantIdenitfier](docs/sdks/configuration/README.md#getmerchantidenitfier) - Retrieve identifiers for the merchant
 * [updatemerchantCallback](docs/sdks/configuration/README.md#updatemerchantcallback) - Update callback URLs for the merchant
 
-### [.testing](docs/sdks/testing/README.md)
+### [testing](docs/sdks/testing/README.md)
 
 * [createAccount](docs/sdks/testing/README.md#createaccount) - Create a test account
 * [createShipmentTracking](docs/sdks/testing/README.md#createshipmenttracking) - Simulate a shipment tracking update
 * [getCreditCard](docs/sdks/testing/README.md#getcreditcard) - Retrieve a test credit card, including its token
 
-### [.webhooks](docs/sdks/webhooks/README.md)
+### [webhooks](docs/sdks/webhooks/README.md)
 
 * [create](docs/sdks/webhooks/README.md#create) - Create a webhook to subscribe to certain events
 * [delete](docs/sdks/webhooks/README.md#delete) - Delete an existing webhook

@@ -1,5 +1,5 @@
 # Configuration
-(*.configuration*)
+(*configuration*)
 
 ## Overview
 
