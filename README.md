@@ -8,18 +8,21 @@
 </div>
 
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### Gradle
 
 ```groovy
-implementation 'com.bolt.bolt_embed:bolt-embed:0.14.0'
+implementation 'com.bolt.bolt_embed:bolt-embed:0.15.0'
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
+### Example
+
 ```java
 package hello.world;
 
@@ -35,23 +38,34 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
-company = "ACME Corporation";
-email = "alice@example.com";
-id = "D4g3h5tBuVYK9";
-isDefault = true;
-phone = "+14155550199";
-region = "CA";
-streetAddress2 = "c/o Shipping Department";
-}});            
+            com.bolt.bolt_embed.models.operations.AccountAddressCreateRequest req = new AccountAddressCreateRequest(
+                "string",
+                new AddressListing(
+                    "US",
+                    "Alice",
+                    "Baker",
+                    "San Francisco",
+                    "94105",
+                    "535 Mission St, Ste 1401"){{
+                    company = "ACME Corporation";
+                    email = "alice@example.com";
+                    id = "D4g3h5tBuVYK9";
+                    isDefault = true;
+                    phone = "+14155550199";
+                    region = "CA";
+                    streetAddress2 = "c/o Shipping Department";
 
-            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(){{
-                option1 = new AccountAddressCreateSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+                }});
+
+            com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(
+            ){{
+                option1 = new AccountAddressCreateSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 
@@ -64,11 +78,10 @@ streetAddress2 = "c/o Shipping Department";
     }
 }
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [account](docs/sdks/account/README.md)
 
@@ -102,13 +115,36 @@ streetAddress2 = "c/o Shipping Department";
 * [delete](docs/sdks/webhooks/README.md#delete) - Delete an existing webhook
 * [get](docs/sdks/webhooks/README.md#get) - Retrieve information for a specific webhook
 * [getAll](docs/sdks/webhooks/README.md#getall) - Retrieve information about all existing webhooks
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
+<!-- Start Server Selection [server] -->
+## Server Selection
 
-<!-- End Dev Containers -->
+## Server Selection
+
+### Select Server by Index
+
+You can override the default server globally using the `setServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.{username}.dev.bolt.me/v3` | `0` (default is `xwang`) |
+| 1 | `https://{environment}.bolt.com/v3` | `0` (default is `api-sandbox`) |
+
+
+
+#### Variables
+
+Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
+ * `setZero String`
+ * `setOne ServerEnvironment`
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally using the `setServerURL` option when initializing the SDK client instance. For example:
+<!-- End Server Selection [server] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

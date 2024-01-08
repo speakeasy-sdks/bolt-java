@@ -63,11 +63,10 @@ public class Payments {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse res = new com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse res = new com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse(contentType, httpRes.statusCode(), httpRes) {{
             paymentMethodInitializeResponse = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -119,11 +118,10 @@ public class Payments {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse res = new com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse res = new com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse(contentType, httpRes.statusCode(), httpRes) {{
             paymentMethodInitializeResponse = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {

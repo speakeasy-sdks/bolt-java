@@ -5,7 +5,6 @@
 package com.bolt.bolt_embed.models.shared;
 
 import com.bolt.bolt_embed.utils.SpeakeasyMetadata;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 public class Security {
@@ -17,7 +16,5 @@ public class Security {
         return this;
     }
     
-    public Security(@JsonProperty("api-key") String apiKey) {
-        this.apiKey = apiKey;
-  }
+    public Security(){}
 }

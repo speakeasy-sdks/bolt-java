@@ -1,23 +1,12 @@
-configVersion: 1.0.0
-management:
-  docChecksum: dd92b9c611121e0300b4763f477bbc36
-  docVersion: 3.0.1
-  speakeasyVersion: 1.116.0
-  generationVersion: 2.185.0
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: bolt-embed
-  repoURL: https://github.com/speakeasy-sdks/bolt-java.git
-features:
-  java:
-    core: 3.0.2
-    globalSecurity: 2.81.1
-    globalServerURLs: 2.82.0
-    inputOutputModels: 2.82.0
-    methodSecurity: 2.82.0
-    nameOverrides: 2.81.1
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
 java:
-  version: 0.14.0
+  version: 0.15.0
   artifactID: bolt-embed
   companyEmail: info@mycompany.com
   companyName: My Company
@@ -37,5 +26,3 @@ java:
   ossrhURL: https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/
   outputModelSuffix: output
   projectName: bolt-embed
-  published: true
-  repoSubDirectory: .

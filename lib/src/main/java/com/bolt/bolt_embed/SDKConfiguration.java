@@ -27,9 +27,9 @@ class SDKConfiguration {
 	}};
 	public String language = "java";
 	public String openapiDocVersion = "3.0.1";
-	public String sdkVersion = "0.14.0";
-	public String genVersion = "2.185.0";
-	public String userAgent = "speakeasy-sdk/java 0.14.0 2.185.0 3.0.1 <no value>";
+	public String sdkVersion = "0.15.0";
+	public String genVersion = "2.228.3";
+	public String userAgent = "speakeasy-sdk/java 0.15.0 2.228.3 3.0.1 com.bolt.bolt_embed";
 	
 	
 	public Map<String, String> getServerVariableDefaults() {

@@ -55,11 +55,10 @@ public class Testing {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse res = new com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse res = new com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse(contentType, httpRes.statusCode(), httpRes) {{
             accountTestCreationData = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -103,10 +102,9 @@ public class Testing {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse res = new com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse res = new com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse(contentType, httpRes.statusCode(), httpRes) {{
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
         }
@@ -138,11 +136,10 @@ public class Testing {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse res = new com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse res = new com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse(contentType, httpRes.statusCode(), httpRes) {{
             creditCard = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {

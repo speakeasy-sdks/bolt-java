@@ -63,12 +63,11 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse(contentType, httpRes.statusCode(), httpRes) {{
             addressListing = null;
             oneOf = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -129,11 +128,10 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse res = new com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse res = new com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse(contentType, httpRes.statusCode(), httpRes) {{
             paymentMethod = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -180,11 +178,10 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse(contentType, httpRes.statusCode(), httpRes) {{
             error = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
         }
@@ -239,12 +236,11 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountAddressEditResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressEditResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountAddressEditResponse res = new com.bolt.bolt_embed.models.operations.AccountAddressEditResponse(contentType, httpRes.statusCode(), httpRes) {{
             addressListing = null;
             oneOf = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -301,11 +297,10 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountExistsResponse res = new com.bolt.bolt_embed.models.operations.AccountExistsResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountExistsResponse res = new com.bolt.bolt_embed.models.operations.AccountExistsResponse(contentType, httpRes.statusCode(), httpRes) {{
             error = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
         }
@@ -352,11 +347,10 @@ public class Account {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.AccountGetResponse res = new com.bolt.bolt_embed.models.operations.AccountGetResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.AccountGetResponse res = new com.bolt.bolt_embed.models.operations.AccountGetResponse(contentType, httpRes.statusCode(), httpRes) {{
             account = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {

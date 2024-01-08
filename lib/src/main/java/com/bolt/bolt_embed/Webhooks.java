@@ -55,11 +55,10 @@ public class Webhooks {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.WebhooksCreateResponse res = new com.bolt.bolt_embed.models.operations.WebhooksCreateResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.WebhooksCreateResponse res = new com.bolt.bolt_embed.models.operations.WebhooksCreateResponse(contentType, httpRes.statusCode(), httpRes) {{
             webhook = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -95,11 +94,10 @@ public class Webhooks {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse res = new com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse res = new com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse(contentType, httpRes.statusCode(), httpRes) {{
             error = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
         }
@@ -137,12 +135,11 @@ public class Webhooks {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.WebhooksGetResponse res = new com.bolt.bolt_embed.models.operations.WebhooksGetResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.WebhooksGetResponse res = new com.bolt.bolt_embed.models.operations.WebhooksGetResponse(contentType, httpRes.statusCode(), httpRes) {{
             webhook = null;
             error = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -193,11 +190,10 @@ public class Webhooks {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse res = new com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse res = new com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse(contentType, httpRes.statusCode(), httpRes) {{
             object = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {

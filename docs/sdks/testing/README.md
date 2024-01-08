@@ -35,17 +35,22 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.AccountTestCreationData req = new AccountTestCreationData(OffsetDateTime.parse("2017-07-21T17:32:28Z"), EmailState.UNVERIFIED, PhoneState.VERIFIED){{
+            com.bolt.bolt_embed.models.shared.AccountTestCreationData req = new AccountTestCreationData(
+                OffsetDateTime.parse("2017-07-21T17:32:28Z"),
+                EmailState.UNVERIFIED,
+                PhoneState.VERIFIED){{
                 hasAddress = true;
                 isMigrated = true;
-            }};            
 
-            TestingAccountCreateResponse res = sdk.testing.createAccount(req);
+            }};
+
+            com.bolt.bolt_embed.models.operations.TestingAccountCreateResponse res = sdk.testing.createAccount(req);
 
             if (res.accountTestCreationData != null) {
                 // handle response
@@ -94,26 +99,32 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(ShipmentTrackingUpdateStatus.IN_TRANSIT, new com.bolt.bolt_embed.models.shared.TrackingDetails[]{{
-    add(new TrackingDetails(){{
-        countryCode = "US";
-        eventDate = "2014-08-21:T14:24:00Z";
-        locality = "San Francisco";
-        message = "Billing information received";
-        postalCode = "94105";
-        region = "CA";
-        status = ShipmentTrackingUpdateSchemasStatus.PRE_TRANSIT;
-    }}),
-}}, "MockBolt-143292"){{
+            com.bolt.bolt_embed.models.shared.ShipmentTrackingUpdate req = new ShipmentTrackingUpdate(
+                ShipmentTrackingUpdateStatus.IN_TRANSIT,
+                new com.bolt.bolt_embed.models.shared.TrackingDetails[]{{
+                    add(new TrackingDetails(
+                    ){{
+                        countryCode = "US";
+                        eventDate = "2014-08-21:T14:24:00Z";
+                        locality = "San Francisco";
+                        message = "Billing information received";
+                        postalCode = "94105";
+                        region = "CA";
+                        status = ShipmentTrackingUpdateSchemasStatus.PRE_TRANSIT;
+                    }}),
+                }},
+                "MockBolt-143292"){{
                 deliveryDate = OffsetDateTime.parse("2014-08-23:T06:00:00Z");
-            }};            
 
-            TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req);
+            }};
+
+            com.bolt.bolt_embed.models.operations.TestingShipmentTrackingCreateResponse res = sdk.testing.createShipmentTracking(req);
 
             if (res.statusCode == 200) {
                 // handle response
@@ -156,12 +167,13 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            TestingCreditCardGetResponse res = sdk.testing.getCreditCard();
+            com.bolt.bolt_embed.models.operations.TestingCreditCardGetResponse res = sdk.testing.getCreditCard();
 
             if (res.creditCard != null) {
                 // handle response

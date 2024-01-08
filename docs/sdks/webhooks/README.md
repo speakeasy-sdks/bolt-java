@@ -35,14 +35,17 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput("string", "https://www.example.com/webhook");            
+            com.bolt.bolt_embed.models.shared.WebhookInput req = new WebhookInput(
+                "string",
+                "https://www.example.com/webhook");
 
-            WebhooksCreateResponse res = sdk.webhooks.create(req);
+            com.bolt.bolt_embed.models.operations.WebhooksCreateResponse res = sdk.webhooks.create(req);
 
             if (res.webhook != null) {
                 // handle response
@@ -84,14 +87,16 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            WebhooksDeleteRequest req = new WebhooksDeleteRequest("wh_za7VbYcSQU2zRgGQXQAm-g");            
+            com.bolt.bolt_embed.models.operations.WebhooksDeleteRequest req = new WebhooksDeleteRequest(
+                "wh_za7VbYcSQU2zRgGQXQAm-g");
 
-            WebhooksDeleteResponse res = sdk.webhooks.delete(req);
+            com.bolt.bolt_embed.models.operations.WebhooksDeleteResponse res = sdk.webhooks.delete(req);
 
             if (res.statusCode == 200) {
                 // handle response
@@ -133,14 +138,16 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            WebhooksGetRequest req = new WebhooksGetRequest("wh_za7VbYcSQU2zRgGQXQAm-g");            
+            com.bolt.bolt_embed.models.operations.WebhooksGetRequest req = new WebhooksGetRequest(
+                "wh_za7VbYcSQU2zRgGQXQAm-g");
 
-            WebhooksGetResponse res = sdk.webhooks.get(req);
+            com.bolt.bolt_embed.models.operations.WebhooksGetResponse res = sdk.webhooks.get(req);
 
             if (res.webhook != null) {
                 // handle response
@@ -182,14 +189,16 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            WebhooksGetAllRequest req = new WebhooksGetAllRequest("string");            
+            com.bolt.bolt_embed.models.operations.WebhooksGetAllRequest req = new WebhooksGetAllRequest(
+                "string");
 
-            WebhooksGetAllResponse res = sdk.webhooks.getAll(req);
+            com.bolt.bolt_embed.models.operations.WebhooksGetAllResponse res = sdk.webhooks.getAll(req);
 
             if (res.object != null) {
                 // handle response

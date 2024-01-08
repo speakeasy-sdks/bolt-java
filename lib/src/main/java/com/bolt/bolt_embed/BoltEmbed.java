@@ -115,6 +115,22 @@ public class BoltEmbed {
 			return this;
 		}
 		
+		/**
+		 * Allows setting the $variable.Name variable for url substitution.
+		 * @param username The value to set.
+		 * @return The builder instance.
+		 */
+		public Builder setUsername(String username) {
+			for (java.util.Map<String, String> server : this.sdkConfiguration.serverDefaults) {
+				if (!server.containsKey("username")) {
+					continue;
+				}
+				server.put("username", username.toString());
+			}
+
+			return this;
+		}
+		
         public enum ServerEnvironment {
             API("api"),
             API_SANDBOX("api-sandbox"),
@@ -129,7 +145,7 @@ public class BoltEmbed {
         }
 
 		/**
-		 * Allows setting the $name variable for url substitution.
+		 * Allows setting the $variable.Name variable for url substitution.
 		 * @param environment The value to set.
 		 * @return The builder instance.
 		 */
@@ -139,22 +155,6 @@ public class BoltEmbed {
 					continue;
 				}
 				server.put("environment", environment.toString());
-			}
-
-			return this;
-		}
-		
-		/**
-		 * Allows setting the $name variable for url substitution.
-		 * @param username The value to set.
-		 * @return The builder instance.
-		 */
-		public Builder setUsername(String username) {
-			for (java.util.Map<String, String> server : this.sdkConfiguration.serverDefaults) {
-				if (!server.containsKey("username")) {
-					continue;
-				}
-				server.put("username", username.toString());
 			}
 
 			return this;

@@ -38,54 +38,79 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest("string", new GuestPaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
-tax = 900L;
-}}, "order_100"){{
-discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
-    add(new CartDiscount(new Amounts("USD", 900L){{
-    tax = 900L;
-    }}){{
-        amounts = new Amounts("USD", 900L){{
-            currency = "USD";
-            tax = 900L;
-            total = 900L;
-        }};
-        code = "SUMMER10DISCOUNT";
-        detailsUrl = "https://www.example.com/SUMMER-SALE";
-    }}),
-}};
-displayId = "215614191";
-items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
-    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L){{
-        description = "Large tote with Bolt logo.";
-        imageUrl = "https://www.example.com/products/123456/images/1.png";
-        name = "Bolt Swag Bag";
-        quantity = 1L;
-        reference = "item_100";
-        totalAmount = 1000L;
-        unitPrice = 1000L;
-    }}),
-}};
-orderDescription = "Order #1234567890";
-shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
-    add(new CartShipment(){{
-        address = "string";
-        carrier = "FedEx";
-        cost = new Amounts("USD", 900L){{
-            currency = "USD";
-            tax = 900L;
-            total = 900L;
-        }};
-    }}),
-}};
-}}, "string"));            
+            com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeRequest req = new GuestPaymentsInitializeRequest(
+                "string",
+                new GuestPaymentMethodInitializeRequest(
+                    new Cart(
+                        new Amounts(
+                            "USD",
+                            900L){{
+                            tax = 900L;
 
-            GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req);
+                        }},
+                        "order_100"){{
+                        discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
+                            add(new CartDiscount(
+                            new Amounts(
+                            "USD",
+                            900L){{
+                            tax = 900L;
+
+                            }}){{
+                                amounts = new Amounts(
+                                "USD",
+                                900L){{
+                                    currency = "USD";
+                                    tax = 900L;
+                                    total = 900L;
+                                }};
+                                code = "SUMMER10DISCOUNT";
+                                detailsUrl = "https://www.example.com/SUMMER-SALE";
+                            }}),
+                        }};
+                        displayId = "215614191";
+                        items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
+                            add(new CartItem(
+                            "Bolt Swag Bag",
+                            1L,
+                            "item_100",
+                            1000L,
+                            1000L){{
+                                description = "Large tote with Bolt logo.";
+                                imageUrl = "https://www.example.com/products/123456/images/1.png";
+                                name = "Bolt Swag Bag";
+                                quantity = 1L;
+                                reference = "item_100";
+                                totalAmount = 1000L;
+                                unitPrice = 1000L;
+                            }}),
+                        }};
+                        orderDescription = "Order #1234567890";
+                        shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
+                            add(new CartShipment(
+                            ){{
+                                address = "string";
+                                carrier = "FedEx";
+                                cost = new Amounts(
+                                "USD",
+                                900L){{
+                                    currency = "USD";
+                                    tax = 900L;
+                                    total = 900L;
+                                }};
+                            }}),
+                        }};
+
+                    }},
+                    "string"));
+
+            com.bolt.bolt_embed.models.operations.GuestPaymentsInitializeResponse res = sdk.payments.initializeGuestPayment(req);
 
             if (res.paymentMethodInitializeResponse != null) {
                 // handle response
@@ -137,55 +162,81 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            PaymentsInitializeRequest req = new PaymentsInitializeRequest("string", new PaymentMethodInitializeRequest(new Cart(new Amounts("USD", 900L){{
-tax = 900L;
-}}, "order_100"){{
-discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
-    add(new CartDiscount(new Amounts("USD", 900L){{
-    tax = 900L;
-    }}){{
-        amounts = new Amounts("USD", 900L){{
-            currency = "USD";
-            tax = 900L;
-            total = 900L;
-        }};
-        code = "SUMMER10DISCOUNT";
-        detailsUrl = "https://www.example.com/SUMMER-SALE";
-    }}),
-}};
-displayId = "215614191";
-items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
-    add(new CartItem("Bolt Swag Bag", 1L, "item_100", 1000L, 1000L){{
-        description = "Large tote with Bolt logo.";
-        imageUrl = "https://www.example.com/products/123456/images/1.png";
-        name = "Bolt Swag Bag";
-        quantity = 1L;
-        reference = "item_100";
-        totalAmount = 1000L;
-        unitPrice = 1000L;
-    }}),
-}};
-orderDescription = "Order #1234567890";
-shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
-    add(new CartShipment(){{
-        address = "string";
-        carrier = "FedEx";
-        cost = new Amounts("USD", 900L){{
-            currency = "USD";
-            tax = 900L;
-            total = 900L;
-        }};
-    }}),
-}};
-}}, "string"));            
+            com.bolt.bolt_embed.models.operations.PaymentsInitializeRequest req = new PaymentsInitializeRequest(
+                "string",
+                new PaymentMethodInitializeRequest(
+                    new Cart(
+                        new Amounts(
+                            "USD",
+                            900L){{
+                            tax = 900L;
 
-            PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity(){{
-                option1 = new PaymentsInitializeSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+                        }},
+                        "order_100"){{
+                        discounts = new com.bolt.bolt_embed.models.shared.CartDiscount[]{{
+                            add(new CartDiscount(
+                            new Amounts(
+                            "USD",
+                            900L){{
+                            tax = 900L;
+
+                            }}){{
+                                amounts = new Amounts(
+                                "USD",
+                                900L){{
+                                    currency = "USD";
+                                    tax = 900L;
+                                    total = 900L;
+                                }};
+                                code = "SUMMER10DISCOUNT";
+                                detailsUrl = "https://www.example.com/SUMMER-SALE";
+                            }}),
+                        }};
+                        displayId = "215614191";
+                        items = new com.bolt.bolt_embed.models.shared.CartItem[]{{
+                            add(new CartItem(
+                            "Bolt Swag Bag",
+                            1L,
+                            "item_100",
+                            1000L,
+                            1000L){{
+                                description = "Large tote with Bolt logo.";
+                                imageUrl = "https://www.example.com/products/123456/images/1.png";
+                                name = "Bolt Swag Bag";
+                                quantity = 1L;
+                                reference = "item_100";
+                                totalAmount = 1000L;
+                                unitPrice = 1000L;
+                            }}),
+                        }};
+                        orderDescription = "Order #1234567890";
+                        shipments = new com.bolt.bolt_embed.models.shared.CartShipment[]{{
+                            add(new CartShipment(
+                            ){{
+                                address = "string";
+                                carrier = "FedEx";
+                                cost = new Amounts(
+                                "USD",
+                                900L){{
+                                    currency = "USD";
+                                    tax = 900L;
+                                    total = 900L;
+                                }};
+                            }}),
+                        }};
+
+                    }},
+                    "string"));
+
+            com.bolt.bolt_embed.models.operations.PaymentsInitializeResponse res = sdk.payments.initializeLoggedInPayment(req, new PaymentsInitializeSecurity(
+            ){{
+                option1 = new PaymentsInitializeSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 

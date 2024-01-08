@@ -37,23 +37,34 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountAddressCreateRequest req = new AccountAddressCreateRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
-company = "ACME Corporation";
-email = "alice@example.com";
-id = "D4g3h5tBuVYK9";
-isDefault = true;
-phone = "+14155550199";
-region = "CA";
-streetAddress2 = "c/o Shipping Department";
-}});            
+            com.bolt.bolt_embed.models.operations.AccountAddressCreateRequest req = new AccountAddressCreateRequest(
+                "string",
+                new AddressListing(
+                    "US",
+                    "Alice",
+                    "Baker",
+                    "San Francisco",
+                    "94105",
+                    "535 Mission St, Ste 1401"){{
+                    company = "ACME Corporation";
+                    email = "alice@example.com";
+                    id = "D4g3h5tBuVYK9";
+                    isDefault = true;
+                    phone = "+14155550199";
+                    region = "CA";
+                    streetAddress2 = "c/o Shipping Department";
 
-            AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(){{
-                option1 = new AccountAddressCreateSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+                }});
+
+            com.bolt.bolt_embed.models.operations.AccountAddressCreateResponse res = sdk.account.addAddress(req, new AccountAddressCreateSecurity(
+            ){{
+                option1 = new AccountAddressCreateSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 
@@ -104,15 +115,19 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest("string", "string");            
+            com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodRequest req = new AccountAddPaymentMethodRequest(
+                "string",
+                "string");
 
-            AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity(){{
-                option1 = new AccountAddPaymentMethodSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+            com.bolt.bolt_embed.models.operations.AccountAddPaymentMethodResponse res = sdk.account.addPaymentMethod(req, new AccountAddPaymentMethodSecurity(
+            ){{
+                option1 = new AccountAddPaymentMethodSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 
@@ -161,15 +176,19 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountAddressDeleteRequest req = new AccountAddressDeleteRequest("string", "D4g3h5tBuVYK9");            
+            com.bolt.bolt_embed.models.operations.AccountAddressDeleteRequest req = new AccountAddressDeleteRequest(
+                "string",
+                "D4g3h5tBuVYK9");
 
-            AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity(){{
-                option1 = new AccountAddressDeleteSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+            com.bolt.bolt_embed.models.operations.AccountAddressDeleteResponse res = sdk.account.deleteAddress(req, new AccountAddressDeleteSecurity(
+            ){{
+                option1 = new AccountAddressDeleteSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 
@@ -220,23 +239,35 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountAddressEditRequest req = new AccountAddressEditRequest("string", new AddressListing("US", "Alice", "Baker", "San Francisco", "94105", "535 Mission St, Ste 1401"){{
-company = "ACME Corporation";
-email = "alice@example.com";
-id = "D4g3h5tBuVYK9";
-isDefault = true;
-phone = "+14155550199";
-region = "CA";
-streetAddress2 = "c/o Shipping Department";
-}}, "D4g3h5tBuVYK9");            
+            com.bolt.bolt_embed.models.operations.AccountAddressEditRequest req = new AccountAddressEditRequest(
+                "string",
+                new AddressListing(
+                    "US",
+                    "Alice",
+                    "Baker",
+                    "San Francisco",
+                    "94105",
+                    "535 Mission St, Ste 1401"){{
+                    company = "ACME Corporation";
+                    email = "alice@example.com";
+                    id = "D4g3h5tBuVYK9";
+                    isDefault = true;
+                    phone = "+14155550199";
+                    region = "CA";
+                    streetAddress2 = "c/o Shipping Department";
 
-            AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity(){{
-                option1 = new AccountAddressEditSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+                }},
+                "D4g3h5tBuVYK9");
+
+            com.bolt.bolt_embed.models.operations.AccountAddressEditResponse res = sdk.account.editAddress(req, new AccountAddressEditSecurity(
+            ){{
+                option1 = new AccountAddressEditSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 
@@ -283,14 +314,19 @@ public class Application {
     public static void main(String[] args) {
         try {
             BoltEmbed sdk = BoltEmbed.builder()
-                .setSecurity(new Security("string"){{
-                    apiKey = "";
+                .setSecurity(new Security(
+                ){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
                 }})
                 .build();
 
-            AccountExistsRequest req = new AccountExistsRequest("string", new Identifier(IdentifierType.EMAIL, "alice@example.com"));            
+            com.bolt.bolt_embed.models.operations.AccountExistsRequest req = new AccountExistsRequest(
+                "string",
+                new Identifier(
+                    IdentifierType.EMAIL,
+                    "alice@example.com"));
 
-            AccountExistsResponse res = sdk.account.exists(req);
+            com.bolt.bolt_embed.models.operations.AccountExistsResponse res = sdk.account.exists(req);
 
             if (res.statusCode == 200) {
                 // handle response
@@ -334,15 +370,18 @@ import com.bolt.bolt_embed.models.shared.Security;
 public class Application {
     public static void main(String[] args) {
         try {
-            BoltEmbed sdk = BoltEmbed.builder()
-                .build();
+            BoltEmbed sdk = BoltEmbed.builder()            .build();
 
-            AccountGetRequest req = new AccountGetRequest("string");            
+            com.bolt.bolt_embed.models.operations.AccountGetRequest req = new AccountGetRequest(
+                "string");
 
-            AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity(){{
-                option1 = new AccountGetSecurityOption1("string", "string"){{
-                    apiKey = "";
-                    oauth = "";
+            com.bolt.bolt_embed.models.operations.AccountGetResponse res = sdk.account.get(req, new AccountGetSecurity(
+            ){{
+                option1 = new AccountGetSecurityOption1(
+                "string",
+                "string"){{
+                    apiKey = "<YOUR_API_KEY_HERE>";
+                    oauth = "Bearer <YOUR_ACCESS_TOKEN_HERE>";
                 }};
             }});
 

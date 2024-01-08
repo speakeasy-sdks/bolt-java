@@ -57,11 +57,10 @@ public class Configuration {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse res = new com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse res = new com.bolt.bolt_embed.models.operations.MerchantCallbacksGetResponse(contentType, httpRes.statusCode(), httpRes) {{
             callbackUrls = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -96,11 +95,10 @@ public class Configuration {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse res = new com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse res = new com.bolt.bolt_embed.models.operations.MerchantIdentifiersGetResponse(contentType, httpRes.statusCode(), httpRes) {{
             identifiers = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
@@ -150,12 +148,11 @@ public class Configuration {
         HttpResponse<byte[]> httpRes = client.send(req);
 
         String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
-
-        com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse res = new com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse(contentType, httpRes.statusCode()) {{
+        
+        com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse res = new com.bolt.bolt_embed.models.operations.MerchantCallbacksUpdateResponse(contentType, httpRes.statusCode(), httpRes) {{
             callbackUrls = null;
             oneOf = null;
         }};
-        res.rawResponse = httpRes;
         
         if (httpRes.statusCode() == 200) {
             if (com.bolt.bolt_embed.utils.Utils.matchContentType(contentType, "application/json")) {
